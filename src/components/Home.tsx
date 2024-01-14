@@ -92,7 +92,9 @@ const Home = () => {
                     </div>
                     <div className="flex justify-end ">
                       <button
-                        className={`px-[1rem] ${isHovering ? null : "hidden"} `}
+                        className={`px-[1rem] ${
+                          isHovering ? null : "invisible"
+                        } `}
                         onClick={() => navigate("/projects")}
                       >
                         Проекты{" "}
