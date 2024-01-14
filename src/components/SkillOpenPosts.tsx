@@ -16,7 +16,13 @@ function SkillOpenPosts() {
             {" "}
             <BiChevronLeft />
           </div>
-          <div className=" w-full "> тут я расскжу о нод ждс</div>
+          <div className=" w-full ">
+            {" "}
+            Я не явлюясь специалистом по бэк энд, поэтому Node.js я использую
+            исключительно для возможности установки npm модулей. Но я постараюсь
+            развить свои навыки в разработке для испрользовании Node.js в полном
+            объеме его возможностей.
+          </div>
           <div className=" cursor-pointer flex justify-end text-4xl w-[20%] items-center">
             <BiChevronRight />
           </div>
