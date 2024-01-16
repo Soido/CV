@@ -20,6 +20,7 @@ import SkllsOpen from "./SkillsOpen";
 import Button from "../UX/UI/Button";
 import { dblClick } from "@testing-library/user-event/dist/click";
 import SkillOpenPosts from "./SkillOpenPosts";
+import SkillsList from "./SkillsList";
 
 function About() {
   const navigate = useNavigate();
@@ -67,23 +68,8 @@ function About() {
                       Мои инструменты
                     </h1>
                   </div>
-                  <div
-                    onClick={() => {
-                      handleClick();
-                    }}
-                  >
-                    {openMenuSkills ? (
-                      <>
-                        <SkllsOpen /> <SkillOpenPosts />{" "}
-                      </>
-                    ) : null}
-                    {skills.map((skills) => (
-                      <Skills
-                        skills={skills}
-                        key={skills.id}
-                        visability={skills.visability}
-                      />
-                    ))}
+                  <div>
+                    <SkillsList />
                   </div>
                 </div>
               </div>
