@@ -18,9 +18,9 @@ import useOpenElement from "../hooks/useOpenelement";
 import SkllsOpen from "./SkillsOpen";
 
 import Button from "../UX/UI/Button";
-import { dblClick } from "@testing-library/user-event/dist/click";
+
 import SkillOpenPosts from "./SkillOpenPosts";
-import SkillsList from "./SkillsList";
+import SkillsSlider from "./SkillsSlider";
 
 function About() {
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ function About() {
       <main className="w-screen h-screen">
         <div className=" flex w-full h-screen items-center  bg-black/90 ">
           <div className="flex flex-col lg:flex-row h-full w-full">
-            <div className="w-[90%] h-full -mt-[2rem]">
+            <div className="w-full h-full -mt-[2rem]">
               <div className="flex w-full h-full justify-center items-center ">
                 <div className="relative flex flex-col w-full p-[2rem] h-[34rem]">
                   <div className=" flex w-full items-start justify-start text-white">
@@ -69,7 +69,7 @@ function About() {
                     </h1>
                   </div>
                   <div>
-                    <SkillsList />
+                    <SkillsSlider />
                   </div>
                 </div>
               </div>

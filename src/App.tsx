@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="App h-screen overflow-auto">
+        <div className="App h-screen">
           <Routes>
             <Route path="/" element={<MainLayout />}>
               <Route index={true} /*можно без true */ element={<Home />} />
