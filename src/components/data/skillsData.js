@@ -1,4 +1,4 @@
-import IconType from "react-icons";
+/*import IconType from "react-icons";
 import type { ReactNode } from "react";
 import { FaReact, FaGitAlt, FaNodeJs } from "react-icons/fa6";
 import {
@@ -46,4 +46,4 @@ const skillsData: ISkills[] = [
   { id: 6, icon: FaGitAlt, name: "Git", desc: "текст" },
 ];
 
-export default skillsData;
+export default skillsData;*/

@@ -1,58 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { FaReact, FaGitAlt, FaNodeJs } from "react-icons/fa6";
-import {
-  BiLogoTailwindCss,
-  BiLogoJavascript,
-  BiLogoTypescript,
-  BiChevronDown,
-  BiChevronLeft,
-  BiChevronRight,
-} from "react-icons/bi";
 
 import Skills from "./Skills";
 
-import avatar from "../img/avatar.jpeg";
-
 import useOpenElement from "../hooks/useOpenelement";
-import SkllsOpen from "./SkillsOpen";
 
-import Button from "../UX/UI/Button";
-
-import SkillOpenPosts from "./SkillOpenPosts";
 import SkillsSlider from "./SkillsSlider";
+import VideoComp from "./VideoСomp";
 
 function About() {
   const navigate = useNavigate();
-  const [openMenuSkills, setOpenMenuskills] = useState(false);
-  const handleClick = () => {
-    setOpenMenuskills(!openMenuSkills);
-  };
-
-  const handleClickAway = () => {
-    setOpenMenuskills(false);
-  };
-
-  const [skills, setSkills] = useState([
-    { id: 1, ikon: <FaNodeJs />, text: "Node.js", visability: "invisible" },
-    {
-      id: 2,
-      ikon: <BiLogoJavascript />,
-      text: "Javascript",
-    },
-    {
-      id: 3,
-      ikon: <BiLogoTypescript />,
-      text: "TypeScript",
-    },
-    { id: 4, ikon: <FaReact />, text: "React" },
-    {
-      id: 5,
-      ikon: <BiLogoTailwindCss />,
-      text: "Tailwind CSS",
-    },
-    { id: 6, ikon: <FaGitAlt />, text: "Git" },
-  ]);
 
   return (
     <>
@@ -75,11 +32,8 @@ function About() {
               </div>
             </div>
             <div className="w-full flex items-center justify-start ">
-              <div className="max-w-[860px] flex flex-col w-full h-[34rem] p-[2rem] ">
-                <div className="flex w-full h-full">
-                  <img className="h-full w-full object-cover" src={avatar} />
-                </div>
-              </div>
+              {" "}
+              <VideoComp />
             </div>
           </div>
         </div>

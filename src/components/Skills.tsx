@@ -1,13 +1,4 @@
-import { FaReact, FaGitAlt, FaNodeJs } from "react-icons/fa6";
-
-import {
-  BiLogoTailwindCss,
-  BiLogoJavascript,
-  BiLogoTypescript,
-  BiChevronDown,
-  BiChevronLeft,
-  BiChevronRight,
-} from "react-icons/bi";
+import { BiChevronRight } from "react-icons/bi";
 import { useRef, useState } from "react";
 
 function Skills(props: any) {
