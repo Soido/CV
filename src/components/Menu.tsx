@@ -4,25 +4,13 @@ import { useState } from "react";
 import { CiMenuKebab } from "react-icons/ci";
 import { RxDot } from "react-icons/rx";
 
+import { motion } from "framer-motion";
+
 import RU from "../UX/UI/ButtonRU";
 import EN from "../UX/UI/ButtonEN";
 
-import avatar from "../img/avatar.png";
-
-function Menu({
-  bgColor = "bg-white/80",
-  height = "h-[58px]",
-  margin = "-mt-[6rem]",
-}) {
+function Menu() {
   const [open, setOpen] = useState(false);
-  const handleClickAway = () => {
-    setOpen(false);
-  };
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
-
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -36,14 +24,17 @@ function Menu({
             <>
               <button
                 className="overflow-hidden text-white top-0 left-[1rem] text-[1.8rem] lg:text-[2rem]"
-                onClick={handleClick}
+                onClick={() => setOpen((open) => !open)}
               >
                 {" "}
                 <RxDot />{" "}
               </button>
               <div
                 className=" cursor-pointer flex flex-row h-[80px] justify-center items-center ml-[1rem]"
-                onClick={() => navigate("/")}
+                onClick={() => {
+                  navigate("/");
+                  setOpen(false);
+                }}
               >
                 <div className="flex flex-col items-center w-full text-white text-[1.3rem] -ml-[2rem]">
                   <p className=" font-thin tracking-[.5rem] text-left ml-0">
@@ -54,6 +45,48 @@ function Menu({
                   </p>
                 </div>
               </div>
+              {open ? (
+                <>
+                  <div className="flex flex-row text-white w-[18rem] justify-between ml-[2rem]">
+                    <motion.div
+                      className={`${
+                        location.pathname === "/about" ? " border-b-2" : null
+                      } pb-1`}
+                      initial={{ x: -50, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: -50, opacity: 0 }}
+                    >
+                      <Link to="/about">Инструменты</Link>
+                    </motion.div>
+                    <motion.div
+                      className={`${
+                        location.pathname === "/projects" ? " border-b-2" : null
+                      } pb-1`}
+                      initial={
+                        open ? { x: -50, opacity: 0 } : { x: 0, opacity: 1 }
+                      }
+                      animate={
+                        open
+                          ? { x: 0, opacity: 1, transition: { delay: 0.1 } }
+                          : { x: -50 }
+                      }
+                    >
+                      {" "}
+                      <Link to="/projects"> Проекты</Link>
+                    </motion.div>
+                    <motion.div
+                      className={`${
+                        location.pathname === "/contacts" ? " border-b-2" : null
+                      } pb-1`}
+                      initial={{ x: -50, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1, transition: { delay: 0.2 } }}
+                    >
+                      {" "}
+                      <Link to="/contacts">Контакты</Link>
+                    </motion.div>
+                  </div>
+                </>
+              ) : null}
             </>
           ) : null}
         </div>
@@ -62,45 +95,6 @@ function Menu({
           <EN />
         </div>
       </div>
-      {open ? (
-        <>
-          <div
-            className={`fixed opacity-80 ${margin} pb-[100rem] w-full h-full overflow-hidden z-7 bg-black/50 mx-0`}
-            onClick={handleClickAway}
-          ></div>
-          <div
-            className={`block h-screen ${margin}  pb-[100rem] md:w-[70%] w-[100%] lg:w-[60%] xl:w-[43%] fixed  bg-white  text-black pt-[10rem] z-8 ${
-              open ? "animate-fade-right" : "animate-fade-left"
-            } animate-ease-out animate-duration-300`}
-            onClick={handleClickAway}
-          >
-            <nav className="text-black text-left no-underline text-2xl font-light ">
-              <ul className="ml-[5.5rem] uppercase">
-                <li>
-                  <a
-                    href="#!"
-                    className="absolute top-20 right-10 text-3xl"
-                    onClick={handleClickAway}
-                  >
-                    x
-                  </a>
-                </li>
-
-                <li className=" mb-[1rem]">
-                  <Link to="/about">Обо мне</Link>
-                </li>
-                <li className=" mb-[1rem]">
-                  <Link to="/projects"> Проекты</Link>
-                </li>
-
-                <li className="mb-[1rem]">
-                  <Link to="/contacts">Контакты</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </>
-      ) : null}
     </header>
   );
 }

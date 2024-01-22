@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import PersonList from "./PersonList";
-import AboutList from "./AboutList";
+import AboutList from "./HomeAboutList";
 import SkillsList from "./HomeSkillsList";
 
 const Home = () => {

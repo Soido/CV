@@ -2,31 +2,30 @@ import { useEffect, useState } from "react";
 
 import { BallTriangle } from "react-loader-spinner";
 
-import { BiChevronRight } from "react-icons/bi";
+import { BiVolumeMute } from "react-icons/bi";
 
 import bgvideo from "../../../video/bgvideo.mp4";
+import testvideo from "../../../video/testvideo.mp4";
 
 function VideoComp() {
-  const [isLoading, setIsloading] = useState(true);
-  useEffect(() => {
+  const [isLoading, setIsloading] = useState(false);
+
+  const fetchData = () => {
+    setIsloading(true);
     setTimeout(() => {
       setIsloading(false);
-    }, 2500);
-  });
+    }, 2000);
+  };
 
   const [open, setOpen] = useState(false);
-  const handleClick = () => {
-    setOpen(!open);
-  };
-  console.log(open);
 
   return (
     <>
       <div className="relative max-w-[860px] flex flex-col w-full h-[34rem] p-[2rem] ">
         {open ? (
           <div className="absolute flex w-full h-full">
-            {isLoading === true ? (
-              <div className=" flex justify-center items-center w-full">
+            {isLoading ? (
+              <div className=" flex justify-center items-center w-full -mt-[5rem]">
                 <BallTriangle
                   height={200}
                   width={200}
@@ -41,7 +40,7 @@ function VideoComp() {
                 loop
                 muted
               >
-                <source src={bgvideo} type="video/mp4 " />
+                <source src={testvideo} type="video/mp4 " />
               </video>
             )}
           </div>
@@ -60,8 +59,17 @@ function VideoComp() {
         )}
 
         <div className="relative flex justify-center h-full ">
-          <div className="absolute bottom-0  text-4xl">
-            <BiChevronRight onClick={handleClick} />{" "}
+          <div
+            className={`absolute bottom-0  text-4xl text-white cursor-pointer ${
+              open ? "invisible" : "visible"
+            }`}
+          >
+            <BiVolumeMute
+              onClick={() => {
+                setOpen(!open);
+                fetchData();
+              }}
+            />{" "}
           </div>
         </div>
       </div>
