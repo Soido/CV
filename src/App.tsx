@@ -3,12 +3,12 @@ import React from "react";
 
 import "./App.css";
 
-import Home from "./components/Home";
-import About from "./components/About";
-import Projects from "./components/Projects";
+import Home from "./components/pages/Home/Home";
+import About from "./components/pages/About/About";
+import Projects from "./components/pages/Projects/Projects";
 import Rusmetrol from "./components/Rusmetrologiya";
 
-import Contacts from "./components/Contacts";
+import Contacts from "./components/pages/Contacts/Contacts";
 import NotFound from "./components/NotFound";
 import MainLayout from "./Layouts/MainLayout";
 

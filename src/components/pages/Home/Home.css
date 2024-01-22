@@ -1,0 +1,24 @@
+:root {
+  --transition: all 0.3s linear;
+}
+/*
+  =======
+  =======
+  */
+
+article {
+  transition: var(--transition);
+}
+
+article.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+leftside {
+  transform: translateX(-100%);
+}
+
+rightSide {
+  transform: translateX(100%);
+}
