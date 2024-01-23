@@ -15,7 +15,7 @@ function Projects() {
             <div className="w-full h-full -mt-[2rem]">
               <ProjectList />
             </div>
-            <div className="flex justify-center items-center w-full">
+            <div className="flex justify-center items-center w-[60%]">
               <BasicPrinciples />
             </div>
           </div>

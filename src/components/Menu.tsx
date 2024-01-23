@@ -14,6 +14,13 @@ function Menu() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const fetchData = () => {
+    setOpen(true);
+    setTimeout(() => {
+      setOpen(false);
+    }, 15000);
+  };
+
   return (
     <header
       className={`fixed py-[10px] min-w-[320px]  px-0 w-full left-0 top-0 z-10 m-0 `}
@@ -24,7 +31,10 @@ function Menu() {
             <>
               <button
                 className="overflow-hidden text-white top-0 left-[1rem] text-[1.8rem] lg:text-[2rem]"
-                onClick={() => setOpen((open) => !open)}
+                onClick={() => {
+                  setOpen(!open);
+                  fetchData();
+                }}
               >
                 {" "}
                 <RxDot />{" "}

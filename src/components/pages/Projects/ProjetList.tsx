@@ -1,7 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+import { motion } from "framer-motion";
+
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
+import PartnersSlider from "./PartnersSlider";
 
 import Rusmetro from "../../../img/rusmetrologiya-logo.png";
 import Medprom from "../../../img/MedpromlabLogo_2.png";
@@ -26,8 +30,12 @@ function ProjectList() {
           <div className="flex items-start justify-between w-full h-[20rem]">
             {open ? (
               <>
-                <div className=" text-white w-full flex flex-row items-center justify-between">
-                  <div className="w-[15%] text-2xl">
+                <motion.div
+                  initial={{ x: 150, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  className=" text-white w-full flex flex-row items-center justify-between "
+                >
+                  <div className="w-[10%] text-2xl -ml-[3rem]">
                     <button
                       onClick={() => {
                         setOpen(false);
@@ -54,12 +62,16 @@ function ProjectList() {
                       Цель сайта-визитки — познакомить посетителей с компанией.
                     </p>
                   </div>{" "}
-                </div>
+                </motion.div>
               </>
             ) : (
               <>
                 <div className=" text-white w-full flex flex-row items-center justify-between">
-                  <div className="w-full text-left pl-[2rem]">
+                  <motion.div
+                    initial={{ x: -150, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    className="w-full text-left pl-[2rem]"
+                  >
                     <h1>Корпоративный сайт.</h1>
                     <p className="mt-[1rem] mb-[1rem]">
                       Корпоративный сайт — это портал для бизнеса, необходимый
@@ -73,8 +85,12 @@ function ProjectList() {
                       телефонов, электронной почты и других способов связи с
                       компанией.
                     </p>
-                  </div>
-                  <div className="w-[15%] text-2xl">
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: -150, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    className="w-[10%] text-2xl"
+                  >
                     <button
                       onClick={() => {
                         setOpen(!open);
@@ -82,7 +98,7 @@ function ProjectList() {
                     >
                       <BiChevronLeft />
                     </button>{" "}
-                  </div>
+                  </motion.div>
                 </div>
               </>
             )}
@@ -90,15 +106,12 @@ function ProjectList() {
 
           <div className="flex flex-col w-full h-[14rem]">
             <div className=" flex w-full items-start justify-start text-white">
-              <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed ml-[2rem] mb-[2rem] ">
+              <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed ml-[2rem] ">
                 {" "}
                 Компании Заказчики
               </h1>
             </div>
-            <div>
-              <div>Logo</div> <div>название</div>
-              <div>status</div>
-            </div>
+            <PartnersSlider />
           </div>
         </div>
       </div>
