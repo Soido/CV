@@ -6,10 +6,10 @@ function BasicPrinciples() {
 
   return (
     <>
-      <div className="flex flex-col w-full items-center justify-center mx-auto px-[15px] md:mt-[0.5rem] lg:mt-0 xl:mt-0 text-white text-right">
-        <div className="flex justify-start w-full text-center mx-auto">
+      <div className="flex flex-col w-[28rem] -mt-[2rem] -ml-[8rem] mx-auto px-[15px] h-[32rem] text-white text-right shadow-xl rounded-xl mr-[4rem]">
+        <div className="flex justify-start w-full text-center mx-auto ">
           <div className="flex w-full ">
-            <h1 className="font-thin tracking-widest text-[1.5rem] lg:text-[2rem] mb-[2rem] leading-relaxed ">
+            <h1 className="font-thin tracking-widest text-[1.5rem]  mb-[2rem] leading-relaxed ">
               Основные принципы разработки
             </h1>
           </div>

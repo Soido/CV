@@ -19,7 +19,7 @@ function ProjectList() {
   return (
     <>
       <div className="flex w-full h-full justify-center items-center ">
-        <div className="relative flex flex-col w-[90%] p-[2rem] h-[34rem] rounded-xl shadow-lg">
+        <div className="relative flex flex-col w-full ml-[5rem] p-[2rem] h-[34rem] rounded-xl shadow-lg">
           <div className=" flex w-full items-start justify-start text-white">
             <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed ml-[2rem] mb-[2rem] ">
               {" "}
