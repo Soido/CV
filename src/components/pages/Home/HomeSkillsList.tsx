@@ -57,7 +57,7 @@ const HomeSkillsList = () => {
             <BiLogoJavascript className="cursor-pointer " />
           </motion.div>
           <motion.div custom={3} variants={iconAnimation}>
-            <FaReact className="cursor-pointer " />
+            <FaReact className="cursor-pointer App-logo " />
           </motion.div>
           <motion.div custom={4} variants={iconAnimation}>
             <BiLogoTypescript className="cursor-pointer " />

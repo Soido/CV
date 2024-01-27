@@ -3,6 +3,8 @@ import { useState } from "react";
 
 import BasicPrinciples from "./BasicPrinciples";
 import ProjectList from "./ProjetList";
+import ProjectSliderAcc from "./ProjectSliderAcc";
+import PartnersSlider from "./PartnersSlider";
 
 function Projects() {
   const navigate = useNavigate;
@@ -10,14 +12,14 @@ function Projects() {
   return (
     <>
       <main className="w-screen h-screen">
-        <div className=" flex w-full h-screen items-center  bg-black/90 ">
-          <div className="flex flex-col lg:flex-row h-full w-full text-white ">
-            <div className="w-full h-full -mt-[2rem]">
-              <ProjectList />
-            </div>
-            <div className="flex justify-center items-center w-[60%]">
-              <BasicPrinciples />
-            </div>
+        <div
+          className=" flex w-full h-screen items-center 
+          flex-row bg-black/90 mx-auto gap-4 "
+        >
+          <div className="flex w-full flex-row  px-[10rem] items-center justify-center -mt-[6rem] gap-4">
+            <ProjectSliderAcc />
+
+            <PartnersSlider />
           </div>
         </div>
       </main>

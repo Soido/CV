@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./SkillList.css";
 
 import { FaReact, FaGitAlt, FaNodeJs } from "react-icons/fa6";
 import {
@@ -86,15 +85,15 @@ function SkillSlider() {
             {description.map((skill: any, skillIndex: number) => {
               const { id, icon, name, desc } = skill;
 
-              let position = "nextSlide";
+              let position = "translate-x-full";
               if (skillIndex === currentIndex) {
-                position = "activeSlide";
+                position = "translate-x-0 opacity-100";
               }
               if (
                 skillIndex === currentIndex - 1 ||
                 (currentIndex === 0 && skillIndex === skillsData.length - 1)
               ) {
-                position = "lastSlide";
+                position = "-translate-x-full";
               }
               return (
                 <article
