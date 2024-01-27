@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 
 import { useWindowSize } from "react-use";
 
-import "./ProjectSliderAcc.css";
-
 import { motion } from "framer-motion";
 
 import { RxDot } from "react-icons/rx";
@@ -13,23 +11,18 @@ import { BiChevronRight } from "react-icons/bi";
 
 import contentItems from "./ProjectData";
 
-import Rusmetro from "../../../img/rusmetrologiya-logo.png";
-import Medprom from "../../../img/MedpromlabLogo_2.png";
-import Kultlogo from "../../../img/kult-logo.png";
-import Rusmetrol from "../../Rusmetrologiya";
-
 function ProjectSliderAcc() {
   const { width, height } = useWindowSize();
   let widthWindow = width;
 
   const navigate = useNavigate;
   const [content, setContent] = useState(contentItems);
-  const [openId, setOpenId] = useState(999999);
+  const [openId, setOpenId] = useState(0);
 
   return (
     <>
-      <div className="flex w-[95%] h-[38rem] justify-center items-center -mt-[8rem] text-white  mx-auto">
-        <div className=" list-none flex w-full h-full px-[2rem] pt-[4rem] flex-row justify-center gap-4">
+      <div className="flex w-[95%] h-[38rem] justify-center items-center  text-white  mx-auto ">
+        <div className=" list-none flex w-full h-full  pt-[4rem] flex-row justify-center gap-4">
           {content.map((items: any, id: number) => {
             const { topic, cont, theme, desc, secdesc, thirddesc } = items;
 
@@ -39,24 +32,24 @@ function ProjectSliderAcc() {
 
             return (
               <motion.div
-                className={` flex overflow-hidden w-[17rem] h-full shadow-xl rounded-xl  text-left`}
+                className={` flex overflow-hidden w-[14rem] h-full shadow-xl rounded-xl  text-left`}
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 style={{
-                  width: isOpen ? `${widthWindow - 350 * (length - 1)}px` : "",
+                  width: isOpen ? `${widthWindow - 530 * (length - 1)}px` : "",
                 }}
                 key={id}
               >
                 <div
                   className={`cursor-pointer   ${
-                    isOpen ? "w-[10rem]" : "w-[17rem]"
+                    isOpen ? "w-[9rem]" : "w-[14rem]"
                   }
                  shrink-0 flex flex-col p-[2rem] items-center justify-between  text-4xl `}
                   onClick={() => {
                     setOpenId(id);
                   }}
                 >
-                  <div className="flex w-full h-full mt-[4rem] text-center flex-col">
+                  <div className="flex w-full h-full  text-center flex-col">
                     <h1
                       className={`w-full ${
                         !isOpen ? "text-2xl" : "text-xl"
@@ -81,10 +74,12 @@ function ProjectSliderAcc() {
                   </div>
                 </div>
 
-                <div
-                  className={` shrink-0 h-full py-[1rem] pl-[1rem]  overflow-y-auto overflow-hidden border-l-2`}
+                <motion.div
+                  className={` shrink-0 h-full py-[1rem] pl-[1rem]  overflow-y-auto overflow-hidden border-l-2  `}
+                  initial={{ x: 150, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
                   style={{
-                    width: isOpen ? `${widthWindow - 305 * length}px` : "",
+                    width: isOpen ? `${widthWindow - 405 * length}px` : "",
                   }}
                 >
                   <div>
@@ -118,7 +113,7 @@ function ProjectSliderAcc() {
                       </p>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             );
           })}
