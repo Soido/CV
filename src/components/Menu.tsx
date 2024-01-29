@@ -1,7 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import { CiMenuKebab } from "react-icons/ci";
 import { RxDot } from "react-icons/rx";
 
 import { motion } from "framer-motion";
@@ -27,7 +26,7 @@ function Menu() {
     >
       <div className="flex flex-row items-start my-0 mx-auto  max-w-screen animate-fade-down animate-ease-in px-[15px]">
         <div className="ml-[2rem] relative flex w-full h-full items-center  ">
-          {location.pathname != "/" ? (
+          {location.pathname !== "/" ? (
             <>
               <button
                 className="overflow-hidden text-white top-0 left-[1rem] text-[1.8rem] lg:text-[2rem]"

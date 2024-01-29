@@ -1,14 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import BasicPrinciples from "./BasicPrinciples";
-import ProjectList from "./ProjetList";
 import ProjectSliderAcc from "./ProjectSliderAcc";
 import PartnersSlider from "./PartnersSlider";
 
 function Projects() {
-  const navigate = useNavigate;
-
   return (
     <>
       <main className="w-screen h-screen">
@@ -18,7 +13,6 @@ function Projects() {
         >
           <div className="flex w-full flex-row  px-[10rem] items-center justify-center -mt-[6rem] gap-4">
             <ProjectSliderAcc />
-
             <PartnersSlider />
           </div>
         </div>

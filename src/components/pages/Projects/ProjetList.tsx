@@ -7,11 +7,6 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 import PartnersSlider from "./PartnersSlider";
 
-import Rusmetro from "../../../img/rusmetrologiya-logo.png";
-import Medprom from "../../../img/MedpromlabLogo_2.png";
-import Kultlogo from "../../../img/kult-logo.png";
-import Rusmetrol from "../../Rusmetrologiya";
-
 function ProjectList() {
   const navigate = useNavigate;
   const [open, setOpen] = useState(false);

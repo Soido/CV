@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 import SkillsSlider from "./SkillsSlider";
 import VideoComp from "./VideoСomp";
 

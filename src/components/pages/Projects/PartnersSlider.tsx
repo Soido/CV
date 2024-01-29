@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import "./PartnersList.css";
-
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 import ProjectData from "./ProjectDataSlider";
@@ -27,7 +25,7 @@ function PartnersSlider() {
   useEffect(() => {
     let slider = setInterval(
       () => setCurrentIndex((prevState) => prevState + 1),
-      18000
+      12000
     );
     return () => {
       clearInterval(slider);
@@ -48,15 +46,15 @@ function PartnersSlider() {
               {description.map((skill: any, skillIndex: number) => {
                 const { id, icon, type, desc, engage, link } = skill;
 
-                let position = "nextSlide";
+                let position = "translate-x-full";
                 if (skillIndex === currentIndex) {
-                  position = "activeSlide";
+                  position = "translate-x-0 opacity-100";
                 }
                 if (
                   skillIndex === currentIndex - 1 ||
                   (currentIndex === 0 && skillIndex === ProjectData.length - 1)
                 ) {
-                  position = "lastSlide";
+                  position = "-translate-x-full";
                 }
                 return (
                   <article
@@ -67,7 +65,7 @@ function PartnersSlider() {
                       <div className="w-full h-[3rem]  rounded-full  text-[1rem] px-[1rem] text-black">
                         {" "}
                         <img
-                          src={Rusmetro}
+                          src={icon}
                           className="w-full h-full object-contain"
                           alt="logoRusmetrologia"
                         />
@@ -92,7 +90,7 @@ function PartnersSlider() {
               })}
             </div>
           </section>
-          <button className="text-white text-2xl text-right w-[10%]">
+          <button className="text-white text-2xl text-rightApp-logo w-[10%]">
             <BiChevronRight
               onClick={() => setCurrentIndex((prevState) => prevState + 1)}
             />{" "}

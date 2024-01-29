@@ -1,5 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import { useWindowSize } from "react-use";
 
@@ -15,7 +15,6 @@ function ProjectSliderAcc() {
   const { width, height } = useWindowSize();
   let widthWindow = width;
 
-  const navigate = useNavigate;
   const [content, setContent] = useState(contentItems);
   const [openId, setOpenId] = useState(0);
 
