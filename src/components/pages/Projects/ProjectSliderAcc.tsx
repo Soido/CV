@@ -31,7 +31,7 @@ function ProjectSliderAcc() {
 
             return (
               <motion.div
-                className={` flex overflow-hidden w-[14rem] h-full shadow-xl rounded-xl  text-left`}
+                className={` flex overflow-hidden w-[14rem] h-full   text-left`}
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 style={{

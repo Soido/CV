@@ -14,7 +14,7 @@ const PersonList = () => {
     <>
       <div className="w-[70%] h-full -mt-[2rem]">
         <div className="flex w-full h-full justify-center items-center ">
-          <div className="flex flex-col p-[2rem] rounded-xl shadow-lg h-[34rem]">
+          <div className="flex flex-col p-[2rem] h-[34rem]">
             <div className="flex w-full items-center justify-center">
               <div className="h-[15rem] w-[15rem] rounded-full ">
                 <img

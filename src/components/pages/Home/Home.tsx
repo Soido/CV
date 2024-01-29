@@ -10,7 +10,7 @@ const Home = () => {
           <div className="flex flex-col lg:flex-row h-full w-full">
             <PersonList />
             <div className="w-full flex items-center justify-start -ml-[8rem] -mt-[4rem]">
-              <div className="max-w-[780px] w-full flex flex-col h-[34rem] p-[2rem] rounded-xl shadow-lg">
+              <div className="max-w-[780px] w-full flex flex-col h-[34rem] p-[2rem] ">
                 <div className="flex flex-col w-full">
                   <AboutList />
                   <SkillsList />
