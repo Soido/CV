@@ -12,9 +12,9 @@ const PersonList = () => {
 
   return (
     <>
-      <div className="w-[70%] h-full -mt-[2rem]">
+      <div className="w-full h-screen lg:-mt-[2rem] mx-auto lg:mx-0">
         <div className="flex w-full h-full justify-center items-center ">
-          <div className="flex flex-col p-[2rem] h-[34rem]">
+          <div className="flex flex-col p-[2rem] lg:h-[34rem] ">
             <div className="flex w-full items-center justify-center">
               <div className="h-[15rem] w-[15rem] rounded-full ">
                 <img
@@ -35,10 +35,10 @@ const PersonList = () => {
               </div>
               <div className="flex justify-end ">
                 <button
-                  className=" px-[1rem] invisible"
+                  className=" px-[1rem]"
                   onClick={() => navigate("/contacts")}
                 >
-                  Связаться со мной{" "}
+                  Скачать резюме{" "}
                 </button>
               </div>
             </div>

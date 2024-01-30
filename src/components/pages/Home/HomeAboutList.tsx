@@ -32,17 +32,14 @@ const AboutList = () => {
 
   return (
     <>
-      <div
-        ref={ref}
-        className="flex flex-col text-left justify-center mx-auto px-[15px] w-full text-white pb-[1rem] mr-[1rem]"
-      >
+      <div className="flex flex-col text-left justify-center mx-auto px-[15px] w-full text-white pb-[1rem] lg:mr-[1rem] lg:h-full h-[22rem] ">
         <motion.div
-          className="  h-[16rem] "
+          className=" lg:h-[16rem] h-full w-full "
           initial="hidden"
           whileInView="visible"
         >
           <h1
-            className={`font-thin tracking-widest text-[1.5rem] mb-[1rem] leading-relaxed`}
+            className={`font-thin tracking-widest text-[1.5rem] mb-[1rem] leading-relaxed lg:text-left text:center w-full`}
           >
             {" "}
             Привет, Я Артем!
@@ -50,7 +47,7 @@ const AboutList = () => {
           {open ? (
             <AboutListSlide />
           ) : (
-            <p className=" tracking-widest text-[1rem]  my-[2rem] leading-relaxed">
+            <p className=" tracking-widest text-[1rem]  lg:my-[2rem] lg:p-0 pb-[1rem] leading-relaxed">
               {" "}
               Специализируюсь на фронт-энд разработке. Имею опыт в разработке
               корпоративных сайтов и сайтов-визиток. Знаю необходимые
@@ -64,7 +61,7 @@ const AboutList = () => {
           whileInView="visible"
           custom={1.3}
           variants={iconAnimation}
-          className=" cursor-pointer flex justify-center items-center text-4xl pb-[1rem] -mt-[1rem] mr-[.5rem]"
+          className=" cursor-pointer flex justify-center items-center text-4xl lg:pb-[1rem]  lg:-mt-[1rem] lg:mr-[.5rem]"
           onClick={() => {
             setOpen(!open);
           }}

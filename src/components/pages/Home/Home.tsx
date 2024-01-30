@@ -5,13 +5,13 @@ import SkillsList from "./HomeSkillsList";
 const Home = () => {
   return (
     <>
-      <main className="w-screen h-screen">
-        <div className=" flex w-full h-screen items-center  bg-black/90">
+      <main className="w-screen lg:h-screen h-full">
+        <div className=" flex w-full lg:h-screen h-full items-center  bg-black/90">
           <div className="flex flex-col lg:flex-row h-full w-full">
             <PersonList />
-            <div className="w-full flex items-center justify-start -ml-[8rem] -mt-[4rem]">
-              <div className="max-w-[780px] w-full flex flex-col h-[34rem] p-[2rem] ">
-                <div className="flex flex-col w-full">
+            <div className="w-full flex items-center justify-start lg:-ml-[8rem] lg:-mt-[4rem] mt-[3rem]">
+              <div className="max-w-[780px] w-full  lg:h-[34rem] h-screen p-[2rem] ">
+                <div className="flex flex-col w-full h-full items-center justify-center my-auto">
                   <AboutList />
                   <SkillsList />
                 </div>

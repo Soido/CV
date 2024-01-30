@@ -38,7 +38,7 @@ const HomeSkillsList = () => {
 
   return (
     <>
-      <div className="  flex flex-col w-full text-left justify-center mx-auto px-[15px] mt-[1rem] lg:mt-0 xl:mt-0 text-white border-t-2 pt-[2rem]">
+      <div className="  flex flex-col w-full text-left justify-center mx-auto px-[15px] text-white border-t-2 pt-[2rem]">
         {" "}
         <h2 className="font-thin tracking-widest text-[1.5rem] mb-[1.5rem] leading-relaxe">
           {" "}
