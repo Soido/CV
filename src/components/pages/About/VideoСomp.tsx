@@ -21,55 +21,56 @@ function VideoComp() {
 
   return (
     <>
-      <div className="relative max-w-[860px] flex flex-col w-full h-[34rem] p-[2rem] ">
-        {open ? (
-          <div className="absolute flex w-full h-full">
-            {isLoading ? (
-              <div className=" flex justify-center items-center w-full -mt-[5rem]">
-                <BallTriangle
-                  height={200}
-                  width={200}
-                  color="white"
-                  ariaLabel="loading"
-                />
-              </div>
-            ) : (
+      <div className="relative max-w-[860px] flex flex-col w-full lg:h-[34rem] h-screen lg:p-[2rem] p-0 items-center justify-center ">
+        <div className="lg:h-full w-full h-[20rem]">
+          {open ? (
+            <div className="absolute flex w-full lg:h-full h-[20rem] ">
+              {isLoading ? (
+                <div className=" flex justify-center items-center w-full -mt-[5rem]">
+                  <BallTriangle
+                    height={200}
+                    width={200}
+                    color="white"
+                    ariaLabel="loading"
+                  />
+                </div>
+              ) : (
+                <video
+                  className=" w-full lg:h-full h-full lg:object-cover object-contain object-left"
+                  autoPlay
+                  loop
+                  muted
+                >
+                  <source src={testvideo} type="video/mp4 " />
+                </video>
+              )}
+            </div>
+          ) : (
+            <div className=" absolute flex lg:h-full h-[20rem] w-full">
+              {" "}
               <video
-                className=" w-full h-full object-cover object-left"
+                className=" w-full h-full lg:object-cover object-contain object-left"
                 autoPlay
                 loop
                 muted
               >
-                <source src={testvideo} type="video/mp4 " />
+                <source src={bgvideo} type="video/mp4 " />
               </video>
-            )}
-          </div>
-        ) : (
-          <div className=" absolute flex h-full w-full">
-            {" "}
-            <video
-              className=" w-full h-full object-cover object-left"
-              autoPlay
-              loop
-              muted
+            </div>
+          )}
+          <div className="relative flex justify-center h-full ">
+            <div
+              className={`absolute lg:bottom-0 bottom-[5rem]  text-4xl text-white cursor-pointer ${
+                open ? "invisible" : "visible"
+              }`}
             >
-              <source src={bgvideo} type="video/mp4 " />
-            </video>
-          </div>
-        )}
-
-        <div className="relative flex justify-center h-full ">
-          <div
-            className={`absolute bottom-0  text-4xl text-white cursor-pointer ${
-              open ? "invisible" : "visible"
-            }`}
-          >
-            <BiVolumeMute
-              onClick={() => {
-                setOpen(!open);
-                fetchData();
-              }}
-            />{" "}
+              <BiVolumeMute
+                onClick={() => {
+                  setOpen(!open);
+                  fetchData();
+                }}
+              />{" "}
+            </div>
           </div>
         </div>
       </div>

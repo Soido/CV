@@ -55,7 +55,8 @@ function ContactsForm() {
         <div className="flex flex-col w-[50rem] h-[40rem] items-start mt-[2rem] pt-[1rem] justify-start text-white ">
           <form
             className="text-white flex flex-col w-full"
-            action=""
+            action="./phpCont/mail.php"
+            method="POST"
             onSubmit={handleSubmit(onSubmit)}
           >
             <motion.div
@@ -150,7 +151,7 @@ function ContactsForm() {
                 {" "}
                 Цель отправки формы:
                 <select
-                  className=" bg-transparent"
+                  className=" bg-transparent border-b-2"
                   {...register("reason", { required: "Выберите цель заявки!" })}
                 >
                   <option className=" bg-black/90" value="Заказать сайт">

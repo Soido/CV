@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSwipeable } from "react-swipeable";
 
 import { FaReact, FaGitAlt, FaNodeJs } from "react-icons/fa6";
 import {
@@ -72,16 +73,27 @@ function SkillSlider() {
     };
   }, [currentIndex]);
 
+  const scrollSlide = useSwipeable({
+    onSwipedLeft: () => setCurrentIndex((prevState) => prevState + 1),
+    onSwipedRight: () => setCurrentIndex((prevState) => prevState - 1),
+  });
+
   return (
     <>
-      <div className="flex flex-row w-full mx-[2rem]">
-        <button className="text-white text-4xl w-[10%]">
+      <div className=" flex w-full  mt-[1rem]  text-white lg:px-0 px-[1rem] ">
+        <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed lg:ml-[2rem] lg:mb-[2rem] ">
+          {" "}
+          Мои инструменты
+        </h1>
+      </div>
+      <div className="flex flex-row w-full lg:mx-[2rem]">
+        <button className="text-white text-4xl w-[10%] ">
           <BiChevronLeft
             onClick={() => setCurrentIndex((prevState) => prevState - 1)}
           />{" "}
         </button>
-        <section className="w-full  mx-auto">
-          <div className=" relative flex  mt-[2rem] h-[24rem] w-full text-center overflow-hidden">
+        <section {...scrollSlide} className="w-full  mx-auto">
+          <div className=" relative flex  lg:mt-[2rem] mt-[2rem] lg:h-[24rem] h-[28rem] w-full text-center overflow-hidden">
             {description.map((skill: any, skillIndex: number) => {
               const { id, icon, name, desc } = skill;
 
@@ -97,17 +109,17 @@ function SkillSlider() {
               }
               return (
                 <article
-                  className={`${position}  absolute flex flex-col top-0 left-0 w-full h-full opacity-0 text-white`}
+                  className={`${position}  absolute flex flex-col lg:justify-normal justify-center top-0 left-0 w-full h-full opacity-0 text-white`}
                   key={id}
                 >
                   <div className="flex flex-row items-center">
-                    <div className="text-[4rem] border-r-2 px-[1rem]">
+                    <div className="lg:text-[4rem] text-4xl border-r-2 px-[1rem]">
                       {icon}
                     </div>
-                    <p className="ml-[2rem] text-2xl">{name}</p>
+                    <p className="lg:ml-[2rem] ml-[1rem] text-2xl">{name}</p>
                   </div>
-                  <div className="mt-[4rem] pl-[1rem] pr-[3rem] text-white text-left">
-                    {desc}
+                  <div className="lg:mt-[4rem] -mt-[2rem] flex h-full lg:justify-normal lg:items-start justify-center items-center lg:pl-[1rem] lg:pr-[3rem] text-white text-left">
+                    <p>{desc}</p>
                   </div>
                 </article>
               );

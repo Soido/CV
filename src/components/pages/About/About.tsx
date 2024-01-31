@@ -1,28 +1,44 @@
+import { useSwipeable } from "react-swipeable";
+
 import SkillsSlider from "./SkillsSlider";
 import VideoComp from "./VideoСomp";
 
 function About() {
+  const scrollToBottom = useSwipeable({
+    onSwipedUp: () =>
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth",
+      }),
+
+    trackMouse: true,
+    delta: 1,
+  });
+
+  const scrollToTop = useSwipeable({
+    onSwipedDown: () =>
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      }),
+  });
+
   return (
     <>
-      <main className="w-screen h-screen">
-        <div className=" flex w-full h-screen items-center  bg-black/90 ">
+      <main className="w-screen lg:h-screen h-full">
+        <div className=" flex w-full lg:h-screen h-full items-center  bg-black/90 ">
           <div className="flex flex-col lg:flex-row h-full w-full">
-            <div className="w-full h-full -mt-[2rem]">
+            <div {...scrollToBottom} className="w-full h-full lg:-mt-[2rem]">
               <div className="flex w-full h-full justify-center items-center ">
-                <div className="relative flex flex-col w-[90%] p-[2rem] h-[34rem]">
-                  <div className=" flex w-full items-start justify-start text-white">
-                    <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed ml-[2rem] mb-[2rem] ">
-                      {" "}
-                      Мои инструменты
-                    </h1>
-                  </div>
-                  <div>
-                    <SkillsSlider />
-                  </div>
+                <div className="relative flex flex-col lg:w-[90%] w-full lg:p-[2rem] lg:h-[34rem] h-screen  justify-center items-center">
+                  <SkillsSlider />
                 </div>
               </div>
             </div>
-            <div className="w-full flex items-center justify-start ">
+            <div
+              {...scrollToTop}
+              className="w-full flex items-center justify-start "
+            >
               {" "}
               <VideoComp />
             </div>
