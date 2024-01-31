@@ -12,11 +12,14 @@ import Contacts from "./components/pages/Contacts/Contacts";
 import NotFound from "./components/NotFound";
 import MainLayout from "./Layouts/MainLayout";
 
+import ScrollToTopPage from "./hooks/scrollToTopPage";
+
 function App() {
   return (
     <>
       <BrowserRouter>
         <div className="App h-screen">
+          <ScrollToTopPage />
           <Routes>
             <Route path="/" element={<MainLayout />}>
               <Route index={true} /*можно без true */ element={<Home />} />

@@ -9,6 +9,17 @@ import avatar from "../../../img/avatar.png";
 
 const PersonList = () => {
   const navigate = useNavigate();
+  const iconAnimation = {
+    hidden: {
+      y: 40,
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.07 },
+    }),
+  };
 
   return (
     <>
@@ -42,12 +53,24 @@ const PersonList = () => {
                 </button>
               </div>
             </div>
-            <div className="flex flex-row w-full text-2xl justify-around mt-[1rem] border-b-2 pb-[1rem] text-white">
-              <SlSocialVkontakte className="cursor-pointer " />
-              <LiaInstagram />
-              <LiaTelegramPlane />
-              <LiaLinkedinIn />
-            </div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              className="flex flex-row w-full text-2xl justify-around mt-[1rem] border-b-2 pb-[1rem] text-white"
+            >
+              <motion.div custom={1} variants={iconAnimation}>
+                <SlSocialVkontakte className="cursor-pointer " />
+              </motion.div>
+              <motion.div custom={2} variants={iconAnimation}>
+                <LiaInstagram className="cursor-pointer " />
+              </motion.div>
+              <motion.div custom={3} variants={iconAnimation}>
+                <LiaTelegramPlane className="cursor-pointer " />
+              </motion.div>
+              <motion.div custom={4} variants={iconAnimation}>
+                <LiaLinkedinIn className="cursor-pointer " />
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>

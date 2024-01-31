@@ -30,7 +30,7 @@ const HomeSkillsList = () => {
     visible: (custom: number) => ({
       y: 0,
       opacity: 1,
-      transition: { delay: custom * 0.7 },
+      transition: { delay: custom * 1 },
     }),
   };
 
@@ -49,22 +49,22 @@ const HomeSkillsList = () => {
           initial="hidden"
           whileInView="visible"
         >
-          <motion.div custom={1} variants={iconAnimation}>
+          <motion.div custom={7} variants={iconAnimation}>
             <FaNodeJs className="cursor-pointer " />
           </motion.div>
-          <motion.div custom={2} variants={iconAnimation}>
+          <motion.div custom={8} variants={iconAnimation}>
             <BiLogoJavascript className="cursor-pointer " />
           </motion.div>
-          <motion.div custom={3} variants={iconAnimation}>
+          <motion.div custom={9} variants={iconAnimation}>
             <FaReact className="cursor-pointer App-logo " />
           </motion.div>
-          <motion.div custom={4} variants={iconAnimation}>
+          <motion.div custom={10} variants={iconAnimation}>
             <BiLogoTypescript className="cursor-pointer " />
           </motion.div>
-          <motion.div custom={5} variants={iconAnimation}>
+          <motion.div custom={11} variants={iconAnimation}>
             <BiLogoTailwindCss className="cursor-pointer " />
           </motion.div>
-          <motion.div custom={6} variants={iconAnimation}>
+          <motion.div custom={12} variants={iconAnimation}>
             <FaGitAlt className="cursor-pointer  " />
           </motion.div>
         </motion.div>

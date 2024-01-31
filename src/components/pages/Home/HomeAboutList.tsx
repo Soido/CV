@@ -59,7 +59,7 @@ const AboutList = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          custom={1.3}
+          custom={1.8}
           variants={iconAnimation}
           className=" cursor-pointer flex justify-center items-center text-4xl lg:pb-[1rem]  lg:-mt-[1rem] lg:mr-[.5rem]"
           onClick={() => {
