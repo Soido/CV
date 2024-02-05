@@ -32,22 +32,26 @@ const AboutList = () => {
 
   return (
     <>
-      <div className="flex flex-col text-left justify-center mx-auto px-[15px] w-full text-white pb-[1rem] lg:mr-[1rem] lg:h-full h-[22rem] ">
+      <div className="flex flex-col text-left justify-center mx-auto px-[15px] w-full text-white pb-[1rem] lg:mr-[1rem] xl:h-full h-[22rem] lg:h-[20rem] overflow-hidden ">
         <motion.div
           className=" lg:h-[16rem] h-full w-full "
           initial="hidden"
           whileInView="visible"
         >
-          <h1
+          <motion.h1
+            initial="hidden"
+            whileInView="visible"
+            custom={2.2}
+            variants={iconAnimation}
             className={`font-thin tracking-widest text-[1.5rem] mb-[1rem] leading-relaxed lg:text-left text:center w-full`}
           >
             {" "}
             Привет, Я Артем!
-          </h1>
+          </motion.h1>
           {open ? (
             <AboutListSlide />
           ) : (
-            <p className=" tracking-widest text-[1rem]  lg:my-[2rem] lg:p-0 pb-[1rem] leading-relaxed">
+            <p className=" tracking-widest text-[1rem]  xl:my-[2rem] lg:p-0 pb-[1rem] leading-relaxed">
               {" "}
               Специализируюсь на фронт-энд разработке. Имею опыт в разработке
               корпоративных сайтов и сайтов-визиток. Знаю необходимые
@@ -61,7 +65,7 @@ const AboutList = () => {
           whileInView="visible"
           custom={1.8}
           variants={iconAnimation}
-          className=" cursor-pointer flex justify-center items-center text-4xl lg:pb-[1rem]  lg:-mt-[1rem] lg:mr-[.5rem]"
+          className=" cursor-pointer flex justify-center items-center text-4xl lg:pb-[1rem]  lg:-mt-[1rem] lg:mr-[.5rem] md:mr-[.6rem] z-10"
           onClick={() => {
             setOpen(!open);
           }}

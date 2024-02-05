@@ -49,12 +49,26 @@ function ContactsForm() {
     }),
   };
 
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  const handleClickAway = () => {
+    setOpen(false);
+  };
+
   return (
     <>
-      <div className="flex w-full flex-row justify-center px-[5rem]  gap-8">
-        <div className="flex flex-col w-[50rem] h-[40rem] items-start mt-[2rem] pt-[1rem] justify-start text-white ">
+      <div className="flex w-full flex-row justify-center items-center lg:px-[5rem]  lg:gap-8 lg:pt-0 overflow-hidden">
+        <div
+          className={`flex flex-col md:w-[50rem]  pl-[2rem] lg:mr-0 mr-[2.5rem] lg:h-[40rem] items-start lg:mt-[4rem]  lg:translate-x-0  lg:opacity-100   justify-start text-white ${
+            open ? "overflow-hidden -translate-x-full opacity-0" : ""
+          }  `}
+        >
           <form
-            className="text-white flex flex-col w-full"
+            className="text-white flex flex-col lg:w-full w-[22rem] md:w-[43rem] lg:pt-0 pt-[4rem] overflow-hidden"
             action="./phpCont/mail.php"
             method="POST"
             onSubmit={handleSubmit(onSubmit)}
@@ -82,7 +96,7 @@ function ContactsForm() {
                   placeholder="Введите Ваше Имя"
                 />
               </label>
-              <div className="h-[1.5rem] text-left text-[.8rem] text-yellow-300">
+              <div className="lg:h-[1.5rem] h-[1rem] text-left text-[.8rem] text-yellow-300">
                 {errors?.firstName?.message || <p className="">{""}</p>}
               </div>
             </motion.div>
@@ -109,7 +123,7 @@ function ContactsForm() {
                   placeholder="Введите Вашу Фамилию"
                 />
               </label>
-              <div className="h-[1.5rem] text-left text-[.8rem] text-yellow-300">
+              <div className="lg:h-[1.5rem] h-[1rem] text-left text-[.8rem] text-yellow-300">
                 {errors?.secondName?.message || <p>{""}</p>}
               </div>
             </motion.div>
@@ -136,7 +150,7 @@ function ContactsForm() {
                   placeholder="Введите адрес электронной почты"
                 />
               </label>
-              <div className="h-[1.5rem] text-left text-[.8rem] text-yellow-300">
+              <div className="lg:h-[1.5rem] h-[1rem] text-left text-[.8rem] text-yellow-300">
                 {errors?.email?.message || <p>{""}</p>}
               </div>
             </motion.div>
@@ -171,7 +185,7 @@ function ContactsForm() {
                   </option>
                 </select>
               </label>
-              <div className="h-[1.5rem] text-left text-[.8rem] text-yellow-300">
+              <div className="lg:h-[1.5rem] h-[1rem] text-left text-[.8rem] text-yellow-300">
                 {errors?.reason?.message || <p>{""}</p>}
               </div>
             </motion.div>
@@ -187,7 +201,7 @@ function ContactsForm() {
               {" "}
               Интересующий Вас вопрос:
               <textarea
-                className="block mt-[.8rem] bg-transparent h-[13rem] rounded-lg p-[1rem] w-full border-2"
+                className="block pt-[.8rem] bg-transparent lg:h-[13rem] h-[9rem] rounded-lg p-[1rem] w-full border-2"
                 {...register("message", {
                   required: "Сообщение не заполнено!",
                   maxLength: {
@@ -198,30 +212,36 @@ function ContactsForm() {
                 placeholder="Ваше сообщение"
               />
             </motion.label>
-            <div className="h-[1rem] -mt-[1rem] text-left text-[.8rem] text-yellow-300">
+            <div className="lg:h-[1.5rem] h-[1rem] lg:-mt-[1rem] text-left text-[.8rem] text-yellow-300">
               {errors?.message?.message || <p>{""}</p>}
             </div>
           </form>
+          <div
+            className="text-white flex w-full justify-end lg:invisible"
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            <button>Готово</button>
+          </div>
         </div>
-        <motion.div
-          className="flex flex-col w-full  pt-[1rem] mt-[2rem]  max-w-[45rem]"
-          initial="hidden"
-          whileInView="visible"
-          custom={6}
-          variants={iconAnimation}
+        <div
+          className={`flex flex-col lg:w-full w-[180rem] -ml-[5rem] md:w-[200rem] lg:pt-[1rem] pt-[4rem] lg:max-w-[45rem] overflow-hidden lg:translate-x-0 ${
+            !open ? "translate-x-full" : "-translate-x-12"
+          } `}
         >
           <div className="text-white w-full flex flex-col">
             <div className="h-full w-full">
               <div className="w-full text-left">
                 <h1>Проверьте Ваше сообщение перед отправкой:</h1>
               </div>
-              <div className="w-full text-left p-[2rem]">
-                <div className="mt-[1rem]">
+              <div className="w-full text-left lg:p-[2rem]">
+                <div className="pt-[1rem]">
                   <p>Добрый день!</p>
                   {watchFields ? (
                     <>
                       {" "}
-                      <p className="mt-[1rem] pr-[1rem]">
+                      <p className="pt-[1rem] pr-[1rem] ">
                         {" "}
                         Меня интересует: {watchFields.reason}
                       </p>
@@ -233,7 +253,7 @@ function ContactsForm() {
                       </p>
                     </>
                   )}
-                  <div className="h-[10rem] mt-[1rem]  ">
+                  <div className="h-[10rem] pt-[1rem] overflow-y-scroll ">
                     {watchFields.message ? (
                       <>
                         <p className=" w-full h-full ">{watchFields.message}</p>
@@ -264,19 +284,20 @@ function ContactsForm() {
               </div>
             </div>
           </div>
-          <div className="flex justify-end">
+          <div className="flex justify-end" onClick={handleClickAway}>
             <button
               className="text-white"
               onClick={handleSubmit((d: formValues) => {
                 reset();
                 alert("Ваше сообщение успешно отправлено!");
+                handleClickAway();
               })}
             >
               Отправить
             </button>
           </div>
           <ContactsSocialMedia />
-        </motion.div>
+        </div>
       </div>
     </>
   );

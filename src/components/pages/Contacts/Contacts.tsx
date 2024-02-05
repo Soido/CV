@@ -10,7 +10,7 @@ function Contacts() {
           className=" flex w-full h-screen items-center justify-center
           flex-row bg-black/90 mx-auto gap-4 "
         >
-          <div className="flex w-full flex-row mt-[2rem] items-center justify-center  gap-4">
+          <div className="flex w-full h-screen  lg:pt-0 items-center justify-center  mb-0 gap-4">
             <ContactsForm />
           </div>
         </div>

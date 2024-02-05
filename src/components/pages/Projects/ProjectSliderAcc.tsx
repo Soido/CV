@@ -1,19 +1,23 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { useWindowSize } from "react-use";
 
 import { motion } from "framer-motion";
 
+import useHover from "../../../hooks/useHover";
+
 import { RxDot } from "react-icons/rx";
 
 import { BiChevronRight } from "react-icons/bi";
 
-import contentItems from "./ProjectData";
+import contentItems from "../../data/ProjectData";
 
 function ProjectSliderAcc() {
   const { width, height } = useWindowSize();
   let widthWindow = width;
+  const ref = useRef(null);
+  const isHovering = useHover(ref);
 
   const [content, setContent] = useState(contentItems);
   const [openId, setOpenId] = useState(0);
@@ -60,6 +64,7 @@ function ProjectSliderAcc() {
                   <button className="-mt-[4rem] h-full">
                     {isOpen ? <BiChevronRight /> : <RxDot />}
                   </button>
+
                   <div className="flex items-center justify-center h-full">
                     {!isOpen ? (
                       <p

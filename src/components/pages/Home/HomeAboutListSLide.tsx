@@ -37,9 +37,9 @@ const AboutListSlide = () => {
 
   return (
     <>
-      <div className="flex w-full lg:h-[10rem] h-[15rem] xl:flex-row flex-col justify-between">
+      <div className="flex w-full lg:h-[10rem] h-[15rem] md:flex-row flex-col justify-between overflow-hidden">
         <motion.div
-          className="flex flex-col w-full h-full lg:border-r-2 lg:border-b-0 border-b-2 lg:p-0 pb-[1rem] cursor-pointer "
+          className="flex flex-col w-full h-full md:border-r-2 md:border-b-0 border-b-2 lg:p-0 pb-[1rem] cursor-pointer "
           initial="hidden"
           whileInView="visible"
           custom={1}

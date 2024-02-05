@@ -1,7 +1,10 @@
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import "./Home.css";
+
+import useHover from "../../../hooks/useHover";
 
 import { FaReact, FaGitAlt, FaNodeJs } from "react-icons/fa6";
 import {
@@ -11,6 +14,9 @@ import {
 } from "react-icons/bi";
 
 const HomeSkillsList = () => {
+  const ref = useRef(null);
+  const isHovering = useHover(ref);
+
   const iconAnimation = {
     hidden: {
       x: -100,
@@ -38,7 +44,7 @@ const HomeSkillsList = () => {
 
   return (
     <>
-      <div className="  flex flex-col w-full text-left justify-center mx-auto px-[15px] text-white border-t-2 pt-[2rem]">
+      <div className="  flex flex-col w-full text-left justify-center mx-auto px-[15px] text-white border-t-2 pt-[2rem] ">
         {" "}
         <h2 className="font-thin tracking-widest text-[1.5rem] mb-[1.5rem] leading-relaxe">
           {" "}
@@ -49,8 +55,8 @@ const HomeSkillsList = () => {
           initial="hidden"
           whileInView="visible"
         >
-          <motion.div custom={7} variants={iconAnimation}>
-            <FaNodeJs className="cursor-pointer " />
+          <motion.div custom={7} variants={iconAnimation} ref={ref}>
+            <FaNodeJs className={`cursor-pointer `} />
           </motion.div>
           <motion.div custom={8} variants={iconAnimation}>
             <BiLogoJavascript className="cursor-pointer " />

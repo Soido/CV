@@ -3,6 +3,8 @@ import { useSwipeable } from "react-swipeable";
 import SkillsSlider from "./SkillsSlider";
 import VideoComp from "./VideoСomp";
 
+import { motion } from "framer-motion";
+
 function About() {
   const scrollToBottom = useSwipeable({
     onSwipedUp: () =>
@@ -23,16 +25,37 @@ function About() {
       }),
   });
 
+  const AnimationLeft = {
+    hidden: {
+      x: -150,
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      x: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.1 },
+    }),
+  };
+
   return (
     <>
       <main className="w-screen lg:h-screen h-full">
-        <div className=" flex w-full lg:h-screen h-full items-center  bg-black/90 ">
-          <div className="flex flex-col lg:flex-row h-full w-full">
-            <div {...scrollToBottom} className="w-full h-full lg:-mt-[2rem]">
+        <div className=" flex w-full lg:h-screen h-full items-center  bg-black/90 pt-[2rem] ">
+          <div className="flex flex-col xl:flex-row h-full w-full">
+            <div
+              {...scrollToBottom}
+              className="w-full h-full xl:-mt-[2rem] lg:pt-[2rem]"
+            >
               <div className="flex w-full h-full justify-center items-center ">
-                <div className="relative flex flex-col lg:w-[90%] w-full lg:p-[2rem] lg:h-[34rem] h-screen  justify-center items-center">
+                <motion.div
+                  className="relative flex flex-col lg:w-[90%] w-full xl:p-[2rem] xl:h-[34rem] lg:h-[20rem] h-screen  justify-center items-center"
+                  initial="hidden"
+                  whileInView="visible"
+                  custom={1}
+                  variants={AnimationLeft}
+                >
                   <SkillsSlider />
-                </div>
+                </motion.div>
               </div>
             </div>
             <div

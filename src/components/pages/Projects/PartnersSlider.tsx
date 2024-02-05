@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
-import ProjectData from "./ProjectDataSlider";
+import contentItemsSlider, {
+  IContentSlider,
+} from "../../data/ProjectDataSlider";
+
+import { useSwipeable } from "react-swipeable";
 
 import Rusmetro from "../../../img/rusmetrologiya-logo.png";
 import Medprom from "../../../img/MedpromlabLogo_2.png";
 import Kultlogo from "../../../img/kult-logo.png";
-import Rusmetrol from "../../Rusmetrologiya";
 
 function PartnersSlider() {
-  const [description, setDescription] = useState(ProjectData);
+  const [description, setDescription] = useState(contentItemsSlider);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -32,18 +35,23 @@ function PartnersSlider() {
     };
   }, [currentIndex]);
 
+  const scrollSlide = useSwipeable({
+    onSwipedLeft: () => setCurrentIndex((prevState) => prevState + 1),
+    onSwipedRight: () => setCurrentIndex((prevState) => prevState - 1),
+  });
+
   return (
     <>
-      <div className="w-[23rem] text-left h-[38rem]">
-        <div className="flex flex-row w-[23rem] justify-center items-center h-[34rem] mt-[1rem]  pt-[2rem] ">
+      <div className="lg:w-[23rem] w-full lg:h-[38rem]  justify-center items-center  text-left ">
+        <div className="flex flex-row lg:w-[23rem] w-full h-[34rem]  lg:mt-[1rem]  pt-[2rem] ">
           <button className="text-white text-2xl w-[10%]">
             <BiChevronLeft
               onClick={() => setCurrentIndex((prevState) => prevState - 1)}
             />{" "}
           </button>
-          <section className="w-full h-full  mx-auto">
+          <section className="w-full h-full  mx-auto" {...scrollSlide}>
             <div className=" relative flex w-full h-full text-center overflow-hidden">
-              {description.map((skill: any, skillIndex: number) => {
+              {description.map((skill: IContentSlider, skillIndex: number) => {
                 const { id, icon, type, desc, engage, link } = skill;
 
                 let position = "translate-x-full";
@@ -52,7 +60,8 @@ function PartnersSlider() {
                 }
                 if (
                   skillIndex === currentIndex - 1 ||
-                  (currentIndex === 0 && skillIndex === ProjectData.length - 1)
+                  (currentIndex === 0 &&
+                    skillIndex === contentItemsSlider.length - 1)
                 ) {
                   position = "-translate-x-full";
                 }
@@ -62,12 +71,12 @@ function PartnersSlider() {
                     key={id}
                   >
                     <div className="flex flex-col items-centerw-full">
-                      <div className="w-full h-[3rem]  rounded-full  text-[1rem] px-[1rem] text-black">
+                      <div className="w-full h-[2.5rem]  rounded-full  text-[1rem] px-[1rem] text-black">
                         {" "}
                         <img
-                          src={icon}
-                          className="w-full h-full object-contain"
-                          alt="logoRusmetrologia"
+                          src={require("../../../img/rusmetrologiya-logo.png")}
+                          className="w-full h-full object-cover"
+                          alt="logocompany"
                         />
                       </div>
                     </div>
@@ -82,7 +91,10 @@ function PartnersSlider() {
                       ))}
 
                       <div className="flex justify-end items-end w-full mt-[1rem]">
-                        <button>Cсылка на проект {link}</button>
+                        <button>
+                          {" "}
+                          <a href={link}>Cсылка на проект </a>{" "}
+                        </button>
                       </div>
                     </div>
                   </article>

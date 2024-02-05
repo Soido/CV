@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Menu from "../components/Menu";
+import Menu from "../components/Menu/Menu";
 import { useWindowSize } from "react-use";
 
 function MainLayout() {

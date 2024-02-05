@@ -21,10 +21,10 @@ function VideoComp() {
 
   return (
     <>
-      <div className="relative max-w-[860px] flex flex-col w-full lg:h-[34rem] h-screen lg:p-[2rem] p-0 items-center justify-center ">
-        <div className="lg:h-full w-full h-[20rem]">
+      <div className="relative max-w-[860px] flex flex-col w-full xl:h-[34rem] lg:h-[22rem]  h-screen lg:p-[2rem] p-0 items-center justify-center ">
+        <div className="xl:h-full w-full h-[22rem]">
           {open ? (
-            <div className="absolute flex w-full lg:h-full h-[20rem] ">
+            <div className="absolute flex w-full lg:h-full md:h-[25rem] h-[20rem] ">
               {isLoading ? (
                 <div className=" flex justify-center items-center w-full -mt-[5rem]">
                   <BallTriangle
@@ -36,7 +36,7 @@ function VideoComp() {
                 </div>
               ) : (
                 <video
-                  className=" w-full lg:h-full h-full lg:object-cover object-contain object-left"
+                  className=" w-full  h-full md:object-cover object-contain object-left"
                   autoPlay
                   loop
                   muted
@@ -46,10 +46,10 @@ function VideoComp() {
               )}
             </div>
           ) : (
-            <div className=" absolute flex lg:h-full h-[20rem] w-full">
+            <div className=" absolute flex lg:h-full h-[20rem] md:h-[25rem] w-full">
               {" "}
               <video
-                className=" w-full h-full lg:object-cover object-contain object-left"
+                className=" w-full h-full md:object-cover object-contain object-left"
                 autoPlay
                 loop
                 muted
@@ -60,7 +60,7 @@ function VideoComp() {
           )}
           <div className="relative flex justify-center h-full ">
             <div
-              className={`absolute lg:bottom-0 bottom-[5rem]  text-4xl text-white cursor-pointer ${
+              className={`absolute md:bottom-0 bottom-[5rem]  text-4xl text-white cursor-pointer ${
                 open ? "invisible" : "visible"
               }`}
             >
