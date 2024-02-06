@@ -1,6 +1,4 @@
-import { useNavigate } from "react-router-dom";
 import { useWindowSize } from "react-use";
-import { useSwipeable } from "react-swipeable";
 
 import ProjectSliderAcc from "./ProjectSliderAcc";
 import ProjectSliderAccVr from "./ProjectSliderAccVr";
@@ -8,27 +6,15 @@ import PartnersSlider from "./PartnersSlider";
 
 function Projects() {
   const { width, height } = useWindowSize();
-  const scrollToTop = useSwipeable({
-    onSwipedDown: () =>
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      }),
-  });
 
   return (
     <>
-      <main className="w-screen lg:h-screen">
-        <div className=" flex w-full lg:h-screen h-full items-center pt-[2rem] flex-row bg-black/90 mx-auto gap-4 ">
-          <div className="flex w-full xl:flex-row flex-col lg:px-[10rem] items-center justify-center lg:-mt-[6rem] mt-0 lg:gap-4">
-            {width < 1240 ? <ProjectSliderAccVr /> : <ProjectSliderAcc />}
+      <main className="w-screen xl:h-screen">
+        <div className=" flex w-full xl:h-screen h-full items-center pt-[2rem]  bg-black/90 mx-auto ">
+          <div className="flex w-full lg:flex-row flex-col 2xl:px-[4rem] pl-[.5rem] lg:px-[1rem] lg:pb-[1rem] items-center justify-center 2xl:-mt-[6rem]  mt-0 xl:gap-4 lg:gap-1">
+            {width < 1450 ? <ProjectSliderAccVr /> : <ProjectSliderAcc />}
 
-            <div
-              {...scrollToTop}
-              className="flex  w-full lg:h-full  h-screen items-center justify-center "
-            >
-              <PartnersSlider />
-            </div>
+            <PartnersSlider />
           </div>
         </div>
       </main>

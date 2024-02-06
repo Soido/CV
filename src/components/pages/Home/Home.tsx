@@ -33,7 +33,7 @@ const Home = () => {
             <PersonList />
 
             <div className="w-full flex items-center justify-start lg:mr-[5rem] xl:-ml-[8rem] lg:-mt-[4rem] mt-[3rem]">
-              <div className="max-w-[780px] w-full  lg:h-[34rem] h-screen p-[2rem] lg:p-0 xl:p-[2rem]">
+              <div className="2xl:max-w-[780px] w-full lg:h-[34rem] h-screen p-[2rem] lg:p-0 xl:p-[2rem]">
                 <div
                   {...scrollToTop}
                   className="flex flex-col w-full h-full items-center justify-center my-auto "

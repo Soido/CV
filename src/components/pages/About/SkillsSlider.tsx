@@ -36,20 +36,20 @@ function SkillSlider() {
 
   return (
     <>
-      <div className=" flex w-full  xl:mt-[1rem] mt-[1rem] lg:pt-[10rem] text-white lg:px-0 px-[1rem] ">
-        <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed lg:ml-[2rem] lg:mb-[2rem] ">
+      <div className=" flex w-full  xl:mt-[1rem] mt-[1rem] lg:pt-[4rem] xl:pt-0 text-white lg:px-[2rem] px-[1.5rem] ">
+        <h1 className="font-thin tracking-widest text-[1.2rem] xl:text-[1.5rem] leading-relaxed xl:ml-[2rem] lg:mb-[2rem] ">
           {" "}
           Мои инструменты
         </h1>
       </div>
-      <div className="flex flex-row w-full xl:mx-[2rem]">
-        <button className="text-white text-4xl w-[10%] ">
+      <div className="flex flex-row w-full 2xl:mx-[2rem]">
+        <button className="text-white text-4xl flex justify-end items-center w-[10%] ">
           <BiChevronLeft
             onClick={() => setCurrentIndex((prevState) => prevState - 1)}
           />{" "}
         </button>
         <section {...scrollSlide} className="w-full  mx-auto">
-          <div className=" relative flex  xl:mt-[2rem] lg:mt-0 mt-[2rem] lg:h-[24rem] h-[28rem] w-full text-center overflow-hidden">
+          <div className=" relative flex  2xl:mt-[2rem] lg:mt-0 mt-[2rem] lg:h-[16rem] xl:h-[22rem] 2xl:h-[26rem] h-[28rem] w-full text-center overflow-hidden">
             {description.map((skill: ISkills, skillIndex: number) => {
               const { id, icon: Icon, name, desc } = skill;
 
@@ -65,7 +65,7 @@ function SkillSlider() {
               }
               return (
                 <article
-                  className={`${position}  absolute flex flex-col lg:justify-normal justify-center top-0 left-0 w-full h-full opacity-0 text-white`}
+                  className={`${position}  absolute flex flex-col lg:justify-normal justify-center xl:justify-center top-0 left-0 w-full h-full opacity-0 text-white`}
                   key={id}
                 >
                   <div className="flex flex-row items-center">
@@ -74,7 +74,7 @@ function SkillSlider() {
                     </div>
                     <p className="lg:ml-[2rem] ml-[1rem] text-2xl">{name}</p>
                   </div>
-                  <div className="xl:mt-[4rem] lg:mt-[2rem] -mt-[2rem] md:-mt-[4rem] flex h-full lg:justify-normal lg:items-start justify-center items-center lg:pl-[1rem] lg:pr-[3rem] text-white text-left">
+                  <div className=" xl:-mt-[4rem] 2xl:-mt-[6rem] lg:mt-[2rem] -mt-[2rem] md:-mt-[4rem] flex h-full lg:justify-normal lg:items-start justify-center items-center xl:items-center  lg:px-[1rem]  text-white text-left">
                     <p>{desc}</p>
                   </div>
                 </article>

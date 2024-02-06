@@ -41,14 +41,14 @@ function About() {
     <>
       <main className="w-screen lg:h-screen h-full">
         <div className=" flex w-full lg:h-screen h-full items-center  bg-black/90 pt-[2rem] ">
-          <div className="flex flex-col xl:flex-row h-full w-full">
+          <div className="flex flex-col xl:flex-row h-full w-full ">
             <div
               {...scrollToBottom}
               className="w-full h-full xl:-mt-[2rem] lg:pt-[2rem]"
             >
-              <div className="flex w-full h-full justify-center items-center ">
+              <div className="flex w-full h-full xl: justify-center xl:items-center">
                 <motion.div
-                  className="relative flex flex-col lg:w-[90%] w-full xl:p-[2rem] xl:h-[34rem] lg:h-[20rem] h-screen  justify-center items-center"
+                  className="relative flex flex-col  w-full xl:p-[2rem] xl:h-[34rem] lg:h-[20rem] h-screen  justify-center items-center"
                   initial="hidden"
                   whileInView="visible"
                   custom={1}
@@ -60,7 +60,7 @@ function About() {
             </div>
             <div
               {...scrollToTop}
-              className="w-full flex items-center justify-start "
+              className="w-full lg:h-full flex lg:items-start xl:items-center justify-start xl:pr-[1rem]"
             >
               {" "}
               <VideoComp />

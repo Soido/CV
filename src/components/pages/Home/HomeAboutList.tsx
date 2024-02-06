@@ -28,11 +28,9 @@ const AboutList = () => {
     }),
   };
 
-  const navigate = useNavigate();
-
   return (
     <>
-      <div className="flex flex-col text-left justify-center mx-auto px-[15px] w-full text-white pb-[1rem] lg:mr-[1rem] xl:h-full h-[22rem] lg:h-[20rem] overflow-hidden ">
+      <div className="flex flex-col text-left justify-center mx-auto  w-full text-white pb-[1rem] lg:mr-[1rem] xl:h-full h-[25rem] lg:h-[20rem] overflow-hidden ">
         <motion.div
           className=" lg:h-[16rem] h-full w-full "
           initial="hidden"
@@ -41,6 +39,7 @@ const AboutList = () => {
           <motion.h1
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
             custom={2.2}
             variants={iconAnimation}
             className={`font-thin tracking-widest text-[1.5rem] mb-[1rem] leading-relaxed lg:text-left text:center w-full`}
@@ -51,21 +50,24 @@ const AboutList = () => {
           {open ? (
             <AboutListSlide />
           ) : (
-            <p className=" tracking-widest text-[1rem]  xl:my-[2rem] lg:p-0 pb-[1rem] leading-relaxed">
-              {" "}
-              Специализируюсь на фронт-энд разработке. Имею опыт в разработке
-              корпоративных сайтов и сайтов-визиток. Знаю необходимые
-              технологии, для того чтобы скорость загрузки приложений была
-              максимально быстрой, вне зависимости от контента.
-            </p>
+            <div className="flex items-center w-full h-full">
+              <p className=" tracking-widest text-[1rem] xl:my-[2rem] lg:p-0 pb-[1rem] leading-relaxed">
+                {" "}
+                Специализируюсь на фронт-энд разработке. Имею опыт в разработке
+                корпоративных сайтов и сайтов-визиток. Знаю необходимые
+                технологии, для того чтобы скорость загрузки приложений была
+                максимально быстрой, вне зависимости от контента.
+              </p>
+            </div>
           )}
         </motion.div>
         <motion.div
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
           custom={1.8}
           variants={iconAnimation}
-          className=" cursor-pointer flex justify-center items-center text-4xl lg:pb-[1rem]  lg:-mt-[1rem] lg:mr-[.5rem] md:mr-[.6rem] z-10"
+          className=" cursor-pointer flex justify-center items-center text-4xl    z-10"
           onClick={() => {
             setOpen(!open);
           }}

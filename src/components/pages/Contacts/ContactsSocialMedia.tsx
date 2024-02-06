@@ -18,13 +18,14 @@ function ContactsSocialMedia() {
 
   return (
     <>
-      <div className="  lg:mt-[7rem] mt-[4rem] items-center justify-center text-white  gap-4 pb-[1rem] ">
+      <div className="  xl:mt-[7rem] mt-[4rem] items-center justify-center text-white  gap-4 pb-[1rem] ">
         <div className="flex flex-row justify-end w-full text-right items-end gap-1 text-2xl ">
           <div className="w-full"></div>
           <motion.div
             className="flex flex-row md:w-[40%] w-full justify-between"
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
           >
             <motion.div
               className=" cursor-pointer"

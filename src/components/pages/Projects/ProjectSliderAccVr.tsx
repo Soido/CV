@@ -27,7 +27,7 @@ function ProjectSliderAccVr() {
 
   return (
     <>
-      <div className="mt-[6rem] flex w-full h-full justify-center items-start  text-white  ">
+      <div className="md:mt-[5rem] lg:mt-[3.5rem] xl:mt-[5rem] mt-[4rem] flex w-full h-full justify-center items-start  text-white  ">
         <div className=" list-none flex w-full flex-col justify-center gap-2 ">
           {content.map((items: any, id: number) => {
             const { topic, cont, theme, desc, secdesc, thirddesc } = items;

@@ -24,7 +24,7 @@ function ProjectSliderAcc() {
 
   return (
     <>
-      <div className="flex w-[95%] h-[38rem] justify-center items-center  text-white  mx-auto ">
+      <div className="flex w-full h-[38rem] justify-center items-center  text-white  mx-auto ">
         <div className=" list-none flex w-full h-full  pt-[4rem] flex-row justify-center gap-4">
           {content.map((items: any, id: number) => {
             const { topic, cont, theme, desc, secdesc, thirddesc } = items;

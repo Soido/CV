@@ -61,14 +61,14 @@ function ContactsForm() {
 
   return (
     <>
-      <div className="flex w-full flex-row justify-center items-center lg:px-[5rem]  lg:gap-8 lg:pt-0 overflow-hidden">
+      <div className="flex w-full h-full flex-row xl:px-[5rem] lg:mt-[3rem] xl:mt-0 lg:gap-4 xl:gap-8 lg:pt-0 overflow-hidden">
         <div
-          className={`flex flex-col md:w-[50rem]  pl-[2rem] lg:mr-0 mr-[2.5rem] lg:h-[40rem] items-start lg:mt-[4rem]  lg:translate-x-0  lg:opacity-100   justify-start text-white ${
+          className={`flex flex-col w-full h-full md:w-[50rem] lg:w-full p-[1rem] md:pl-[2rem] lg:mr-0 mr-[2.5rem] lg:h-full  lg:translate-x-0 lg:opacity-100 items-center justify-center text-white ${
             open ? "overflow-hidden -translate-x-full opacity-0" : ""
           }  `}
         >
           <form
-            className="text-white flex flex-col lg:w-full w-[22rem] md:w-[43rem] lg:pt-0 pt-[4rem] overflow-hidden"
+            className="text-white flex flex-col lg:w-full  w-[22rem] md:w-[43rem]  md:pt-[4rem] overflow-hidden  "
             action="./phpCont/mail.php"
             method="POST"
             onSubmit={handleSubmit(onSubmit)}
@@ -77,6 +77,7 @@ function ContactsForm() {
               className="h-[5rem]"
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true }}
               custom={1}
               variants={iconAnimation}
             >
@@ -104,6 +105,7 @@ function ContactsForm() {
               className="h-[5rem]"
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true }}
               custom={2}
               variants={iconAnimation}
             >
@@ -131,6 +133,7 @@ function ContactsForm() {
               className="h-[5rem]"
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true }}
               custom={3}
               variants={iconAnimation}
             >
@@ -155,9 +158,10 @@ function ContactsForm() {
               </div>
             </motion.div>
             <motion.div
-              className="h-5rem"
+              className="h-[5rem]"
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true }}
               custom={4}
               variants={iconAnimation}
             >
@@ -194,6 +198,7 @@ function ContactsForm() {
               className="flex flex-col text-left h-full items-start justify-start"
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true }}
               custom={5}
               variants={iconAnimation}
               htmlFor=""
@@ -226,12 +231,12 @@ function ContactsForm() {
           </div>
         </div>
         <div
-          className={`flex flex-col lg:w-full w-[180rem] -ml-[5rem] md:w-[200rem] lg:pt-[1rem] pt-[4rem] lg:max-w-[45rem] overflow-hidden lg:translate-x-0 ${
+          className={`flex flex-col justify-center md:h-full h-screen w-[90rem] pt-[5rem] md:w-[200rem] lg:w-full -ml-[5rem] lg:ml-0 lg:mr-[2rem] lg:pt-[1rem] md:pt-0 lg:max-w-[45rem] xl:max-w-none overflow-hidden lg:translate-x-0 ${
             !open ? "translate-x-full" : "-translate-x-12"
           } `}
         >
-          <div className="text-white w-full flex flex-col">
-            <div className="h-full w-full">
+          <div className="text-white w-full flex flex-col justify-center items-center md:pt-[10rem] lg:pt-0">
+            <div className="h-full w-full  ">
               <div className="w-full text-left">
                 <h1>Проверьте Ваше сообщение перед отправкой:</h1>
               </div>
@@ -284,7 +289,7 @@ function ContactsForm() {
               </div>
             </div>
           </div>
-          <div className="flex justify-end" onClick={handleClickAway}>
+          <div className="flex justify-end " onClick={handleClickAway}>
             <button
               className="text-white"
               onClick={handleSubmit((d: formValues) => {

@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
 import "./Home.css";
 
 import useHover from "../../../hooks/useHover";
@@ -37,44 +39,45 @@ const AboutListSlide = () => {
 
   return (
     <>
-      <div className="flex w-full lg:h-[10rem] h-[15rem] md:flex-row flex-col justify-between overflow-hidden">
+      <div className="flex w-full lg:h-[10rem] h-[18rem] md:flex-row flex-col justify-between overflow-hidden">
         <motion.div
-          className="flex flex-col w-full h-full md:border-r-2 md:border-b-0 border-b-2 lg:p-0 pb-[1rem] cursor-pointer "
+          className="flex flex-row items-center justify-center w-full h-full md:border-r-2 md:border-b-0 border-b-2 lg:p-0  cursor-pointer "
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
           custom={1}
           variants={TextAnimationLeft}
           onClick={() => navigate("/contacts")}
         >
-          <p className="tracking-widest text-[1rem] pr-[1rem] mt-[1rem] leading-relaxed">
+          <p className="tracking-widest text-[1rem] mt-[1rem] leading-relaxed">
             Задайте вопрос о разработке веб-сайтов, их стоимости и возможности
-            нанять меня:
+            нанять меня
           </p>
           <button
-            className=" lg:visible invisible cursor-pointer lg:mt-[2rem] mt-0 text-right pr-[2rem]"
+            className=" px-[1rem] cursor-pointer text-xl mt-0 text-right "
             onClick={() => navigate("/contacts")}
           >
-            Связаться со мной
+            <BiChevronRight />
           </button>
         </motion.div>
         <motion.div
-          className="pl-[1rem] flex flex-col w-full cursor-pointer "
+          className=" items-center justify-center  flex flex-row w-full h-full cursor-pointer "
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
           custom={1}
           variants={TextAnimationRight}
           onClick={() => navigate("/projects")}
         >
-          <p className="  tracking-widest text-right text-[1rem] px-[1rem] mt-[1rem] leading-relaxed">
-            Ознакомьтесь с тем, что я делаю на конкретных примерах:
-          </p>
-
           <button
-            className=" lg:visible invisible cursor-pointer lg:mt-[3.5rem] mt-0 text-right lg:pr-[2rem] pr-[1rem]"
+            className=" cursor-pointer text-xl mt-0 px-[1rem] "
             onClick={() => navigate("/projects")}
           >
-            Примеры проектов
+            <BiChevronLeft />
           </button>
+          <p className="  tracking-widest text-right text-[1rem]  mt-[1rem] leading-relaxed">
+            Ознакомьтесь с информцией о разработке и проектов
+          </p>
         </motion.div>
       </div>
     </>

@@ -54,6 +54,7 @@ const HomeSkillsList = () => {
           className="flex flex-row w-full text-4xl justify-around"
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
         >
           <motion.div custom={7} variants={iconAnimation} ref={ref}>
             <FaNodeJs className={`cursor-pointer `} />
@@ -78,6 +79,7 @@ const HomeSkillsList = () => {
           className="flex justify-end mt-[1.2rem]"
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
         >
           <motion.button
             custom={1}

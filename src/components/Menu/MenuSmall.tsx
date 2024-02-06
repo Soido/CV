@@ -28,7 +28,7 @@ function MenuSmall() {
             <>
               <div className="flex flex-row w-full ">
                 <button
-                  className=" text-white top-0 left-[1rem] text-[1.5rem] md:text-[2rem]"
+                  className=" text-white top-0 left-[1rem] text-[1.5rem] md:text-[2rem] z-50"
                   onClick={() => {
                     setOpen(!open);
                     fetchData();
@@ -44,7 +44,7 @@ function MenuSmall() {
                     setOpen(false);
                   }}
                 >
-                  <div className="flex flex-col items-center w-full text-white text-md -ml-[2rem] md:ml-0">
+                  <div className="flex flex-col items-center w-full text-white text-md -ml-[1rem] md:ml-0">
                     <p className=" font-thin tracking-[.5rem] text-left ml-0">
                       АРТЕМ
                     </p>

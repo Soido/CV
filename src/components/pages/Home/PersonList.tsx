@@ -56,6 +56,7 @@ const PersonList = () => {
             <motion.div
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true }}
               className="flex flex-row w-full text-2xl justify-around mt-[1rem] border-b-2 pb-[1rem] text-white"
             >
               <motion.div custom={1} variants={iconAnimation}>
