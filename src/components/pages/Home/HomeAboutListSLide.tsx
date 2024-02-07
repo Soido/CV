@@ -76,7 +76,7 @@ const AboutListSlide = () => {
             <BiChevronLeft />
           </button>
           <p className="  tracking-widest text-right text-[1rem]  mt-[1rem] leading-relaxed">
-            Ознакомьтесь с информцией о разработке и проектов
+            Ознакомьтесь с информцией о разработке и моих проектах
           </p>
         </motion.div>
       </div>
