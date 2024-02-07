@@ -81,17 +81,17 @@ function PartnersSlider() {
                         key={id}
                       >
                         <div className="flex flex-col items-centerw-full">
-                          <div className="w-full h-[2.5rem]  rounded-full  text-[1rem] px-[1rem] text-black">
+                          <div className="w-[15rem] h-[4rem]  rounded-full  text-[1rem] px-[1rem] text-black">
                             {" "}
                             <img
-                              src={require("../../../img/rusmetrologiya-logo.png")}
-                              className="w-full h-full object-cover"
+                              src={icon}
+                              className="w-full h-full object-contain"
                               alt="logocompany"
                             />
                           </div>
                         </div>
-                        <div className="flex flex-col items-start justify-center mt-[3rem] px-[1rem] text-left w-full">
-                          <h1 className=""> Тип сайта: {type}</h1>
+                        <div className="flex flex-col items-start justify-center mt-[2rem] px-[1rem] text-left w-full">
+                          <h2 className=""> Тип сайта: {type}</h2>
                           <p className="mt-[1rem]">Вовлеченность: {engage}</p>
                           <p className="mt-[1rem]">Этапы разработки: </p>
                           {[].concat(desc).map((text, idx) => (

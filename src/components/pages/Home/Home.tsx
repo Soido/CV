@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import PersonList from "./PersonList";
-import AboutList from "./HomeAboutList";
-import SkillsList from "./HomeSkillsList";
+import HomeAboutList from "./HomeAboutList";
+import HomeSkillsList from "./HomeSkillsList";
 
 import { useSwipeable } from "react-swipeable";
 
@@ -38,8 +38,8 @@ const Home = () => {
                   {...scrollToTop}
                   className="flex flex-col w-full h-full items-center justify-center my-auto "
                 >
-                  <AboutList />
-                  <SkillsList />
+                  <HomeAboutList />
+                  <HomeSkillsList />
                 </div>
               </div>
             </div>

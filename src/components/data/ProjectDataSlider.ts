@@ -1,8 +1,10 @@
-import Rusmetrologiya from "../../../img/rusmetrologiya-logo.png";
+import Rusmetrologiya from "../../img/rusmetrologiya-logo.png";
+import MedpromLab from "../../img/MedpromlabLogo_2.png";
+import knx24 from "../../img/knx24.png";
 
 export interface IContentSlider {
   id: number;
-  icon: string;
+  icon?: string;
   type: string;
   engage: string;
 
@@ -13,7 +15,7 @@ export interface IContentSlider {
 const contentItemsSlider: IContentSlider[] = [
   {
     id: 1,
-    icon: "../../../img/rusmetrologiya-logo.png",
+    icon: Rusmetrologiya,
     type: "Корпоротивный сайт",
     engage: "100%, передан Заказчику",
 
@@ -28,7 +30,7 @@ const contentItemsSlider: IContentSlider[] = [
   },
   {
     id: 2,
-    icon: "../../../img/MedpromlabLogo_2.png",
+    icon: MedpromLab,
     type: "Корпортивный сайт",
     engage: "100%, в проецссе разработки",
 
@@ -45,13 +47,13 @@ const contentItemsSlider: IContentSlider[] = [
   },
   {
     id: 3,
-    icon: "https://catherineasquithgallery.com/uploads/posts/2021-03/1614612233_137-p-fon-dlya-fotoshopa-priroda-209.jpghttps://knx24.com/local/templates/knx24_dev/assets/images/nav-mob-logo-white.svg",
+    icon: knx24,
     type: "Корпоративный сайт, интернет-магазин ",
     engage: "участие в разработке функциональных блоков",
 
     desc: [
       "подключение готовых сервисов",
-      "разработка некоторых функциональных блоково",
+      "разработка некоторых функциональных блоков",
     ],
     link: "https://knx24.com/",
   },

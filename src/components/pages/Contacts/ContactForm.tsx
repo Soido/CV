@@ -238,7 +238,7 @@ function ContactsForm() {
           <div className="text-white w-full flex flex-col justify-center items-center md:pt-[10rem] lg:pt-0">
             <div className="h-full w-full  ">
               <div className="w-full text-left">
-                <h1>Проверьте Ваше сообщение перед отправкой:</h1>
+                <h2>Проверьте Ваше сообщение перед отправкой:</h2>
               </div>
               <div className="w-full text-left lg:p-[2rem]">
                 <div className="pt-[1rem]">

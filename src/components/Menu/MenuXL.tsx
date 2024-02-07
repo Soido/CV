@@ -5,8 +5,7 @@ import { RxDot } from "react-icons/rx";
 
 import { motion } from "framer-motion";
 
-import RU from "../../UX/UI/ButtonRU";
-import Button from "../../UX/UI/ButtonEN";
+import MyButton from "../../UX/UI/MyButton";
 
 function MenuSmall() {
   const [open, setOpen] = useState(false);
@@ -44,12 +43,12 @@ function MenuSmall() {
                 }}
               >
                 <div className="flex flex-col items-center w-full text-white text-[1.3rem] -ml-[2rem]">
-                  <p className=" font-thin tracking-[.5rem] text-left ml-0">
+                  <h1 className=" font-thin tracking-[.5rem] text-left ml-0">
                     АРТЕМ
-                  </p>
-                  <p className=" font-extrabold tracking-widest text-left ml-[5rem]">
+                  </h1>
+                  <h2 className=" font-extrabold tracking-widest text-left ml-[5rem]">
                     СУРЖКО
-                  </p>
+                  </h2>
                 </div>
               </div>
             </div>
@@ -99,8 +98,8 @@ function MenuSmall() {
         ) : null}
       </div>
       <div className=" flex w-full h-[80px] justify-end items-center mr-[2rem] ">
-        <RU />
-        <Button></Button>
+        <MyButton>RU</MyButton>
+        <MyButton>E</MyButton>
       </div>
     </div>
   );

@@ -53,13 +53,13 @@ function ProjectSliderAcc() {
                   }}
                 >
                   <div className="flex w-full h-full  text-center flex-col">
-                    <h1
+                    <h2
                       className={`w-full ${
                         !isOpen ? "text-2xl" : "text-xl"
                       } font-thin leading-none`}
                     >
                       {topic}
-                    </h1>{" "}
+                    </h2>{" "}
                   </div>
                   <button className="-mt-[4rem] h-full">
                     {isOpen ? <BiChevronRight /> : <RxDot />}
