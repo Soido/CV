@@ -91,7 +91,7 @@ function PartnersSlider() {
                           </div>
                         </div>
                         <div className="flex flex-col items-start justify-center mt-[2rem] px-[1rem] text-left w-full">
-                          <h1 className=""> Тип сайта: {type}</h1>
+                          <h2 className=""> Тип сайта: {type}</h2>
                           <p className="mt-[1rem]">Вовлеченность: {engage}</p>
                           <p className="mt-[1rem]">Этапы разработки: </p>
                           {[].concat(desc).map((text, idx) => (

@@ -1,16 +1,12 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
 import { useWindowSize } from "react-use";
 
 import { motion } from "framer-motion";
 
 import { RxDot } from "react-icons/rx";
-
 import { BiChevronDown } from "react-icons/bi";
 
 import contentItems from "../../data/ProjectData";
-import { is } from "@babel/types";
 
 function ProjectSliderAccVr() {
   const { width, height } = useWindowSize();
@@ -30,7 +26,7 @@ function ProjectSliderAccVr() {
       <div className="md:mt-[5rem] lg:mt-[3.5rem] xl:mt-[5rem] mt-[4rem] flex w-full h-full justify-center items-start  text-white  ">
         <div className=" list-none flex w-full flex-col justify-center gap-2 ">
           {content.map((items: any, id: number) => {
-            const { topic, cont, theme, desc, secdesc, thirddesc } = items;
+            const { topic, theme, desc, secdesc, thirddesc } = items;
 
             let isOpen = id === openId;
 
@@ -58,11 +54,11 @@ function ProjectSliderAccVr() {
                 >
                   <div className="flex w-full h-full items-center justify-between  ">
                     <div>
-                      <h1
+                      <h2
                         className={`w-full h-full text-lg font-thin leading-none text-left`}
                       >
                         {topic}
-                      </h1>{" "}
+                      </h2>{" "}
                     </div>
                   </div>
                   <div className="flex items-center justify-center h-full"></div>

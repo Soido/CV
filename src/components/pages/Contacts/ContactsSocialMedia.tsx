@@ -32,28 +32,35 @@ function ContactsSocialMedia() {
               custom={7}
               variants={iconAnimation}
             >
-              <SlSocialVkontakte />
+              <a href="https://vk.com/soidu_soshel">
+                {" "}
+                <SlSocialVkontakte className="cursor-pointer " />
+              </a>
             </motion.div>
             <motion.div
               className=" cursor-pointer"
               custom={8}
               variants={iconAnimation}
             >
-              <LiaInstagram />
+              <a href="https://www.instagram.com/artyom_surzhko">
+                <LiaInstagram className="cursor-pointer " />
+              </a>
             </motion.div>
             <motion.div
               className=" cursor-pointer"
               custom={9}
               variants={iconAnimation}
             >
-              <LiaTelegramPlane />
+              <a href="https://t.me/mr_Artyom_S">
+                <LiaTelegramPlane className="cursor-pointer " />{" "}
+              </a>
             </motion.div>
             <motion.div
               className=" cursor-pointer"
               custom={10}
               variants={iconAnimation}
             >
-              <LiaLinkedinIn />
+              <LiaLinkedinIn className="cursor-pointer " />
             </motion.div>
           </motion.div>
         </div>

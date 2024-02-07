@@ -4,6 +4,8 @@ import { BallTriangle } from "react-loader-spinner";
 
 import { BiVolumeMute } from "react-icons/bi";
 
+import VideoСompInterveiw from "./VideoСompInterveiw";
+
 import bgvideo from "../../../video/bgvideo.mp4";
 import testvideo from "../../../video/testvideo.mp4";
 
@@ -35,14 +37,7 @@ function VideoComp() {
                   />
                 </div>
               ) : (
-                <video
-                  className=" w-full  h-full md:object-cover object-contain object-left"
-                  autoPlay
-                  loop
-                  muted
-                >
-                  <source src={testvideo} type="video/mp4 " />
-                </video>
+                <VideoСompInterveiw />
               )}
             </div>
           ) : (
@@ -60,7 +55,7 @@ function VideoComp() {
           )}
           <div className="relative flex justify-center h-full ">
             <div
-              className={`absolute md:bottom-0 bottom-[5rem] lg:bottom-[2rem] xl:bottom-[8rem] text-4xl text-white cursor-pointer ${
+              className={`absolute md:bottom-0 bottom-[5rem] lg:bottom-[2rem] xl:bottom-[8rem] 2xl:bottom-[2rem] text-4xl text-white cursor-pointer ${
                 open ? "invisible" : "visible"
               }`}
             >

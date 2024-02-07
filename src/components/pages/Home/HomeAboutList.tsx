@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import "./Home.css";
@@ -10,7 +9,7 @@ import useHover from "../../../hooks/useHover";
 
 import AboutListSlide from "./HomeAboutListSLide";
 
-const AboutList = () => {
+const HomeAboutList = () => {
   const ref = useRef(null);
   const [open, setOpen] = useState(false);
 
@@ -30,23 +29,21 @@ const AboutList = () => {
 
   return (
     <>
-      <div className="flex flex-col text-left justify-center mx-auto  w-full text-white pb-[1rem] lg:mr-[1rem] xl:h-full h-[25rem] lg:h-[20rem] overflow-hidden ">
-        <motion.div
-          className=" lg:h-[16rem] h-full w-full "
-          initial="hidden"
-          whileInView="visible"
-        >
-          <motion.h1
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="flex flex-col text-left justify-center mx-auto  w-full text-white pb-[1rem] lg:mr-[1rem] xl:h-full h-[25rem] lg:h-[20rem] overflow-hidden "
+      >
+        <div className=" lg:h-[16rem] h-full w-full ">
+          <motion.h2
             custom={2.2}
             variants={iconAnimation}
             className={`font-thin tracking-widest text-[1.5rem] mb-[1rem] leading-relaxed lg:text-left text:center w-full`}
           >
             {" "}
             Привет, Я Артем!
-          </motion.h1>
+          </motion.h2>
           {open ? (
             <AboutListSlide />
           ) : (
@@ -60,11 +57,8 @@ const AboutList = () => {
               </p>
             </div>
           )}
-        </motion.div>
+        </div>
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
           custom={1.8}
           variants={iconAnimation}
           className=" cursor-pointer flex justify-center items-center text-4xl    z-10"
@@ -72,11 +66,11 @@ const AboutList = () => {
             setOpen(!open);
           }}
         >
-          <RxDot />
+          <RxDot title="Нажми для просмотра" />
         </motion.div>
-      </div>
+      </motion.div>
     </>
   );
 };
 
-export default AboutList;
+export default HomeAboutList;

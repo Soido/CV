@@ -8,6 +8,10 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 function SkillSlider() {
   const [description, setDescription] = useState(skillsData);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollSlide = useSwipeable({
+    onSwipedLeft: () => setCurrentIndex((prevState) => prevState + 1),
+    onSwipedRight: () => setCurrentIndex((prevState) => prevState - 1),
+  });
 
   useEffect(() => {
     const lastIndex = description.length - 1;
@@ -29,18 +33,13 @@ function SkillSlider() {
     };
   }, [currentIndex]);
 
-  const scrollSlide = useSwipeable({
-    onSwipedLeft: () => setCurrentIndex((prevState) => prevState + 1),
-    onSwipedRight: () => setCurrentIndex((prevState) => prevState - 1),
-  });
-
   return (
     <>
       <div className=" flex w-full  xl:mt-[1rem] mt-[1rem] lg:pt-[4rem] xl:pt-0 text-white lg:px-[2rem] px-[1.5rem] ">
-        <h1 className="font-thin tracking-widest text-[1.2rem] xl:text-[1.5rem] leading-relaxed xl:ml-[2rem] lg:mb-[2rem] ">
+        <h2 className="font-thin tracking-widest text-[1.2rem] xl:text-[1.5rem] leading-relaxed xl:ml-[2rem] lg:mb-[2rem] ">
           {" "}
           Мои инструменты
-        </h1>
+        </h2>
       </div>
       <div className="flex flex-row w-full 2xl:mx-[2rem]">
         <button className="text-white text-4xl flex justify-end items-center w-[10%] ">

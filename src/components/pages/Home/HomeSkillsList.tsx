@@ -57,22 +57,45 @@ const HomeSkillsList = () => {
           viewport={{ once: true }}
         >
           <motion.div custom={7} variants={iconAnimation} ref={ref}>
-            <FaNodeJs className={`cursor-pointer `} />
+            <a href="https://nodejs.org/en" title="NodeJs Site">
+              <FaNodeJs className={`cursor-pointer `} />
+            </a>
           </motion.div>
           <motion.div custom={8} variants={iconAnimation}>
-            <BiLogoJavascript className="cursor-pointer " />
+            <a
+              href="https://developer.mozilla.org/ru/docs/Web/JavaScript"
+              title="Mozilla.org Site"
+            >
+              {" "}
+              <BiLogoJavascript className="cursor-pointer " />
+            </a>
           </motion.div>
           <motion.div custom={9} variants={iconAnimation}>
-            <FaReact className="cursor-pointer App-logo " />
+            <a href="https://react.dev/" title="React Site">
+              {" "}
+              <FaReact className="cursor-pointer App-logo " />
+            </a>
           </motion.div>
           <motion.div custom={10} variants={iconAnimation}>
-            <BiLogoTypescript className="cursor-pointer " />
+            <a
+              href="https://www.typescriptlang.org/"
+              title="TypeScript.org Site"
+            >
+              {" "}
+              <BiLogoTypescript className="cursor-pointer " />
+            </a>
           </motion.div>
           <motion.div custom={11} variants={iconAnimation}>
-            <BiLogoTailwindCss className="cursor-pointer " />
+            <a href="https://tailwindcss.com/" title="TailwindCSS Site">
+              {" "}
+              <BiLogoTailwindCss className="cursor-pointer " />
+            </a>
           </motion.div>
           <motion.div custom={12} variants={iconAnimation}>
-            <FaGitAlt className="cursor-pointer  " />
+            <a href="https://git-scm.com/" title="Git Site">
+              {" "}
+              <FaGitAlt className="cursor-pointer  " />
+            </a>
           </motion.div>
         </motion.div>
         <motion.div

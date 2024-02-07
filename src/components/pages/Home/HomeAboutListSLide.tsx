@@ -6,11 +6,7 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 import "./Home.css";
 
-import useHover from "../../../hooks/useHover";
-
-const AboutListSlide = () => {
-  const ref = useRef(null);
-
+const HomeAboutListSlide = () => {
   const TextAnimationLeft = {
     hidden: {
       x: -150,
@@ -84,4 +80,4 @@ const AboutListSlide = () => {
   );
 };
 
-export default AboutListSlide;
+export default HomeAboutListSlide;

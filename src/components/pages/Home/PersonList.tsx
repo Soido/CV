@@ -31,6 +31,7 @@ const PersonList = () => {
                 <img
                   className="h-full w-full object-cover rounded-full"
                   src={avatar}
+                  alt="avatar"
                 />
               </div>
             </div>
@@ -38,11 +39,11 @@ const PersonList = () => {
             <div className="flex flex-col h-full items-center  mx-auto mt-[1rem] text-white">
               {" "}
               <div className="">
-                <p className="text-[2rem] "> Артем Суржко</p>
-                <p className=" font-thin text-[1.5rem] mb-[2rem] mt-[.5rem] ">
+                <h1 className="text-[2rem] "> Артем Суржко</h1>
+                <h2 className=" font-thin text-[1.5rem] mb-[2rem] mt-[.5rem] ">
                   {" "}
                   Веб-Разработчик.{" "}
-                </p>
+                </h2>
               </div>
               <div className="flex justify-end ">
                 <button
@@ -60,13 +61,20 @@ const PersonList = () => {
               className="flex flex-row w-full text-2xl justify-around mt-[1rem] border-b-2 pb-[1rem] text-white"
             >
               <motion.div custom={1} variants={iconAnimation}>
-                <SlSocialVkontakte className="cursor-pointer " />
+                <a href="https://vk.com/soidu_soshel">
+                  {" "}
+                  <SlSocialVkontakte className="cursor-pointer " />
+                </a>
               </motion.div>
               <motion.div custom={2} variants={iconAnimation}>
-                <LiaInstagram className="cursor-pointer " />
+                <a href="https://www.instagram.com/artyom_surzhko">
+                  <LiaInstagram className="cursor-pointer " />
+                </a>
               </motion.div>
               <motion.div custom={3} variants={iconAnimation}>
-                <LiaTelegramPlane className="cursor-pointer " />
+                <a href="https://t.me/mr_Artyom_S">
+                  <LiaTelegramPlane className="cursor-pointer " />{" "}
+                </a>
               </motion.div>
               <motion.div custom={4} variants={iconAnimation}>
                 <LiaLinkedinIn className="cursor-pointer " />
