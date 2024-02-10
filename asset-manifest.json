@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/cv/static/css/main.40b7247d.css",
-    "main.js": "/cv/static/js/main.13a871e5.js",
-    "static/js/787.81cbd1a9.chunk.js": "/cv/static/js/787.81cbd1a9.chunk.js",
-    "static/media/testvideo.mp4": "/cv/static/media/testvideo.ed406b58fff9c1a6e339.mp4",
-    "static/media/bgvideo.mp4": "/cv/static/media/bgvideo.ea57323488b95ae94dbf.mp4",
-    "static/media/avatar.png": "/cv/static/media/avatar.8eb262908af9cb9d236c.png",
-    "static/media/MedpromlabLogo_2.png": "/cv/static/media/MedpromlabLogo_2.c66f44485763dd285b02.png",
-    "static/media/knx24.png": "/cv/static/media/knx24.dc1c3d79bc980393bd2d.png",
-    "index.html": "/cv/index.html",
-    "main.40b7247d.css.map": "/cv/static/css/main.40b7247d.css.map",
-    "main.13a871e5.js.map": "/cv/static/js/main.13a871e5.js.map",
-    "787.81cbd1a9.chunk.js.map": "/cv/static/js/787.81cbd1a9.chunk.js.map"
+    "main.css": "/CV/static/css/main.40b7247d.css",
+    "main.js": "/CV/static/js/main.8b827018.js",
+    "static/js/787.81cbd1a9.chunk.js": "/CV/static/js/787.81cbd1a9.chunk.js",
+    "static/media/testvideo.mp4": "/CV/static/media/testvideo.ed406b58fff9c1a6e339.mp4",
+    "static/media/bgvideo.mp4": "/CV/static/media/bgvideo.ea57323488b95ae94dbf.mp4",
+    "static/media/avatar.png": "/CV/static/media/avatar.8eb262908af9cb9d236c.png",
+    "static/media/MedpromlabLogo_2.png": "/CV/static/media/MedpromlabLogo_2.c66f44485763dd285b02.png",
+    "static/media/knx24.png": "/CV/static/media/knx24.dc1c3d79bc980393bd2d.png",
+    "index.html": "/CV/index.html",
+    "main.40b7247d.css.map": "/CV/static/css/main.40b7247d.css.map",
+    "main.8b827018.js.map": "/CV/static/js/main.8b827018.js.map",
+    "787.81cbd1a9.chunk.js.map": "/CV/static/js/787.81cbd1a9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.40b7247d.css",
-    "static/js/main.13a871e5.js"
+    "static/js/main.8b827018.js"
   ]
 }
