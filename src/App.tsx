@@ -15,8 +15,8 @@ import ScrollToTopPage from "./hooks/scrollToTopPage";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <div className="App h-screen">
+      <BrowserRouter basename="/cv">
+        <div className="App">
           <ScrollToTopPage />
           <Routes>
             <Route path="/" element={<MainLayout />}>

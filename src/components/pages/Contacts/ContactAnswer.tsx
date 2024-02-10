@@ -5,19 +5,9 @@ import type { formValues } from "./ContactForm";
 const ContactsFormAnswer = ({
   watchFields,
   errors,
-  firstName,
-  secondName,
-  email,
-  reason,
-  message,
 }: {
   watchFields: formValues;
   errors: FieldErrors<formValues>;
-  firstName: string;
-  secondName: string;
-  email: string;
-  reason: string;
-  message: string;
 }) => {
   const iconBlock = {
     hidden: {
@@ -52,14 +42,16 @@ const ContactsFormAnswer = ({
                 <span
                   className={`${watchFields.reason ? "" : "text-yellow-300"}`}
                 >
-                  {watchFields.reason ? reason : errors?.reason?.message}
+                  {watchFields.reason
+                    ? watchFields.reason
+                    : errors?.reason?.message}
                 </span>
               </p>
 
               <div className="h-[10rem] pt-[1rem] overflow-y-scroll ">
                 <p className="w-full h-full">
                   {watchFields.message ? (
-                    message
+                    watchFields.message
                   ) : (
                     <span className="text-yellow-300">
                       {" "}
@@ -76,9 +68,9 @@ const ContactsFormAnswer = ({
               watchFields.email ? (
                 <>
                   <p>
-                    {firstName} {secondName}
+                    {watchFields.firstName} {watchFields.secondName}
                   </p>{" "}
-                  <p>{email}.</p>{" "}
+                  <p>{watchFields.email}</p>{" "}
                 </>
               ) : (
                 <>

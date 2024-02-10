@@ -5,9 +5,11 @@ import type { formValues } from "./ContactForm";
 
 function ContactsFormInput({
   trigger,
+  watch,
   errors,
   register,
 }: {
+  watch: any;
   trigger: UseFormTrigger<formValues>;
   errors: FieldErrors<formValues>;
   register: UseFormRegister<formValues>;
@@ -42,8 +44,8 @@ function ContactsFormInput({
               className=" bg-transparent  border-b-2"
               type="text"
               {...register("firstName", {
+                onChange: _.debounce((e) => e.target.value, 200),
                 required: "Укажите Ваше имя!",
-                onChange: _.debounce((e) => console.log(e), 500),
                 pattern: {
                   value: /^[a-zA-ZА-Яа-яЁё]+$/,
                   message: "Имя не может содержать цифры",
@@ -65,6 +67,7 @@ function ContactsFormInput({
               type="text"
               {...register("secondName", {
                 required: "Укажите Вашу Фамилию!",
+
                 pattern: {
                   value: /^[a-zA-ZА-Яа-яЁё]+$/,
                   message: "Фамилия не может содержать цифры",
@@ -140,6 +143,7 @@ function ContactsFormInput({
             className="block pt-[.8rem] bg-transparent lg:h-[13rem] h-[9rem] rounded-lg p-[1rem] w-full border-2"
             {...register("message", {
               required: "Сообщение не заполнено!",
+
               maxLength: {
                 value: 450,
                 message: "Максимальное количество символов не более 450",

@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
-
+import _ from "lodash";
 import ContactsSocialMedia from "./ContactsSocialMedia";
 import ContactsFormAnswer from "./ContactAnswer";
 import ContactsFormInput from "./ContactFormInput";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export type formValues = {
   firstName: string;
@@ -33,6 +33,7 @@ function ContactsForm() {
   });
 
   const watchFields = watch();
+
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
@@ -53,6 +54,7 @@ function ContactsForm() {
             errors={errors}
             register={register}
             trigger={trigger}
+            watch={watchFields}
           />
           <div
             className="text-white flex w-full justify-end lg:invisible"
@@ -68,15 +70,7 @@ function ContactsForm() {
             !open ? "translate-x-full" : "-translate-x-12"
           } `}
         >
-          <ContactsFormAnswer
-            watchFields={watchFields}
-            errors={errors}
-            firstName={watchFields.firstName}
-            secondName={watchFields.secondName}
-            email={watchFields.email}
-            reason={watchFields.reason}
-            message={watchFields.message}
-          />
+          <ContactsFormAnswer watchFields={watchFields} errors={errors} />
           <div className="flex justify-end " onClick={handleClickAway}>
             <button
               className="text-white"
