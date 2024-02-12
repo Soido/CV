@@ -20,7 +20,7 @@ function MenuSmall() {
   };
 
   return (
-    <div className="flex flex-col items-start my-0 mx-auto  max-w-screen px-[15px]">
+    <div className="flex flex-col items-start my-0 mx-auto  max-w-screen px-[15px] ">
       <div className="flex flex-row  w-full justify-between items-center h-full ">
         <div className=" relative flex lg:w-full h-full items-center w-[10rem] z-10">
           {location.pathname !== "/" ? (
