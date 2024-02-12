@@ -48,6 +48,8 @@ function VideoComp() {
                 autoPlay
                 loop
                 muted
+                playsInline
+                disablePictureInPicture
               >
                 <source src={bgvideo} type="video/mp4 " />
               </video>

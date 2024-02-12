@@ -32,7 +32,7 @@ function ContactsFormInput({
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="text-white flex flex-col lg:w-full  w-[22rem] md:w-[43rem]  md:pt-[4rem] overflow-hidden  "
+        className="text-white flex flex-col lg:w-full w-[21rem] md:w-[43rem]  md:pt-[4rem] overflow-hidden  "
         action="./phpCont/mail.php"
         method="POST"
       >
@@ -41,7 +41,7 @@ function ContactsFormInput({
             {" "}
             Имя:
             <input
-              className=" bg-transparent  border-b-2"
+              className=" bg-transparent border-b-2"
               type="text"
               {...register("firstName", {
                 onChange: _.debounce((e) => e.target.value, 200),
@@ -143,7 +143,6 @@ function ContactsFormInput({
             className="block pt-[.8rem] bg-transparent lg:h-[13rem] h-[9rem] rounded-lg p-[1rem] w-full border-2"
             {...register("message", {
               required: "Сообщение не заполнено!",
-
               maxLength: {
                 value: 450,
                 message: "Максимальное количество символов не более 450",

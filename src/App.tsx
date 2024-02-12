@@ -15,7 +15,7 @@ import ScrollToTopPage from "./hooks/scrollToTopPage";
 function App() {
   return (
     <>
-      <BrowserRouter basename="/cv">
+      <BrowserRouter /*basename="/CV"*/>
         <div className="App">
           <ScrollToTopPage />
           <Routes>

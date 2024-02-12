@@ -10,6 +10,8 @@ function VideoCompinterview() {
         autoPlay
         loop
         muted
+        playsInline
+        disablePictureInPicture
       >
         <source src={testvideo} type="video/mp4 " />
       </video>

@@ -44,9 +44,9 @@ function ContactsForm() {
 
   return (
     <>
-      <div className="flex w-full h-full flex-row xl:px-[5rem] lg:mt-[3rem] xl:mt-0 lg:gap-4 xl:gap-8 lg:pt-0 overflow-hidden">
+      <div className="flex w-full h-screen py-[4rem] flex-row xl:px-[5rem] lg:mt-[3rem] xl:mt-0 lg:gap-4 xl:gap-8 lg:pt-0 overflow-hidden">
         <div
-          className={`flex flex-col w-full h-full md:w-[50rem] lg:w-full p-[1rem] md:pl-[2rem] lg:mr-0 mr-[2.5rem] lg:h-full  lg:translate-x-0 lg:opacity-100 items-center justify-center text-white ${
+          className={`flex flex-col w-full h-screen md:w-[50rem] lg:w-full p-[1rem] md:pl-[2rem] lg:mr-0 mr-[2.5rem] lg:h-full  lg:translate-x-0 lg:opacity-100 items-center justify-center text-white ${
             open ? "overflow-hidden -translate-x-full opacity-0" : ""
           }  `}
         >

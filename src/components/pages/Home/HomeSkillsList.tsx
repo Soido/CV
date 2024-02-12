@@ -99,7 +99,7 @@ const HomeSkillsList = () => {
           </motion.div>
         </motion.div>
         <motion.div
-          className="flex justify-end mt-[1.2rem]"
+          className="flex justify-end mt-[1.2rem] -mr-[2rem]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

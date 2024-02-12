@@ -1,7 +1,7 @@
 {
   "name": "cv-ts",
   "version": "0.1.0",
-  "homepage": "https://soido.github.io/cv",
+  "homepage": "https://soido.github.io/CV",
   "private": false,
   "dependencies": {
     "@reduxjs/toolkit": "^2.1.0",
