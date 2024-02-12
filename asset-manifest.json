@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CV/static/css/main.378e00f3.css",
-    "main.js": "/CV/static/js/main.d2b37d38.js",
+    "main.css": "/CV/static/css/main.015abe0e.css",
+    "main.js": "/CV/static/js/main.7a2e4d86.js",
     "static/js/787.81cbd1a9.chunk.js": "/CV/static/js/787.81cbd1a9.chunk.js",
     "static/media/testvideo.mp4": "/CV/static/media/testvideo.ed406b58fff9c1a6e339.mp4",
     "static/media/bgvideo.mp4": "/CV/static/media/bgvideo.ea57323488b95ae94dbf.mp4",
@@ -9,12 +9,12 @@
     "static/media/MedpromlabLogo_2.png": "/CV/static/media/MedpromlabLogo_2.c66f44485763dd285b02.png",
     "static/media/knx24.png": "/CV/static/media/knx24.dc1c3d79bc980393bd2d.png",
     "index.html": "/CV/index.html",
-    "main.378e00f3.css.map": "/CV/static/css/main.378e00f3.css.map",
-    "main.d2b37d38.js.map": "/CV/static/js/main.d2b37d38.js.map",
+    "main.015abe0e.css.map": "/CV/static/css/main.015abe0e.css.map",
+    "main.7a2e4d86.js.map": "/CV/static/js/main.7a2e4d86.js.map",
     "787.81cbd1a9.chunk.js.map": "/CV/static/js/787.81cbd1a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.378e00f3.css",
-    "static/js/main.d2b37d38.js"
+    "static/css/main.015abe0e.css",
+    "static/js/main.7a2e4d86.js"
   ]
 }
