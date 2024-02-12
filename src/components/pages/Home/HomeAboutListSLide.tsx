@@ -43,15 +43,14 @@ const HomeAboutListSlide = () => {
           viewport={{ once: true }}
           custom={1}
           variants={TextAnimationLeft}
-          onClick={() => navigate("/contacts")}
+          onClick={() => navigate("/projects")}
         >
-          <p className="tracking-widest text-[1rem] mt-[1rem] leading-relaxed">
-            Задайте вопрос о разработке веб-сайтов, их стоимости и возможности
-            нанять меня
+          <p className="  tracking-widest  text-[1rem]  mt-[1rem] leading-relaxed">
+            Ознакомьтесь с информцией о разработке и моих проектах
           </p>
           <button
             className=" px-[1rem] cursor-pointer text-xl mt-0 text-right "
-            onClick={() => navigate("/contacts")}
+            onClick={() => navigate("/projects")}
           >
             <BiChevronRight />
           </button>
@@ -63,16 +62,17 @@ const HomeAboutListSlide = () => {
           viewport={{ once: true }}
           custom={1}
           variants={TextAnimationRight}
-          onClick={() => navigate("/projects")}
+          onClick={() => navigate("/contacts")}
         >
           <button
             className=" cursor-pointer text-xl mt-0 px-[1rem] "
-            onClick={() => navigate("/projects")}
+            onClick={() => navigate("/contacts")}
           >
             <BiChevronLeft />
           </button>
-          <p className="  tracking-widest text-right text-[1rem]  mt-[1rem] leading-relaxed">
-            Ознакомьтесь с информцией о разработке и моих проектах
+          <p className="tracking-widest text-right text-[1rem] mt-[1rem] leading-relaxed">
+            Задайте вопрос о разработке веб-сайтов, их стоимости и возможности
+            нанять меня
           </p>
         </motion.div>
       </div>

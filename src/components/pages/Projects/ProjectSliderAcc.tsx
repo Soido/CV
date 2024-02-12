@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
-
+import { Scrollbars } from "react-custom-scrollbars-2";
 import { useWindowSize } from "react-use";
 
 import { motion } from "framer-motion";
@@ -83,40 +83,50 @@ function ProjectSliderAcc() {
                   initial={{ x: 150, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   style={{
-                    width: isOpen ? `${widthWindow - 405 * length}px` : "",
+                    width: isOpen ? `${widthWindow - 410 * length}px` : "",
                   }}
                 >
-                  <div>
-                    <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed  ">
-                      {theme.firstName}
-                    </h1>
+                  <Scrollbars
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      color: "#ffffff",
+                    }}
+                  >
+                    <div>
+                      <div className="mr-[1rem]">
+                        <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed  ">
+                          {theme.firstName}
+                        </h1>
 
-                    {[].concat(desc).map((text, idx) => (
-                      <p key={`${id}__${idx}`} className="mt-[1rem]">
-                        {text}
-                      </p>
-                    ))}
-                  </div>
-                  <div>
-                    <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed mt-[1rem] ">
-                      {theme.secondName}
-                    </h1>
-                    {[].concat(secdesc).map((text, idx) => (
-                      <p key={`${id}__${idx}`} className="mt-[1rem]">
-                        {text}
-                      </p>
-                    ))}
-                  </div>
-                  <div className="mt-[1rem]">
-                    <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed mt-[1rem]  ">
-                      {theme.thirdName}
-                    </h1>
-                    {[].concat(thirddesc).map((text, idx) => (
-                      <p key={`${id}__${idx}`} className="mt-[1rem]">
-                        {text}
-                      </p>
-                    ))}
-                  </div>
+                        {[].concat(desc).map((text, idx) => (
+                          <p key={`${id}__${idx}`} className="mt-[1rem]">
+                            {text}
+                          </p>
+                        ))}
+                      </div>
+                      <div className="mr-[1rem]">
+                        <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed mt-[1rem] ">
+                          {theme.secondName}
+                        </h1>
+                        {[].concat(secdesc).map((text, idx) => (
+                          <p key={`${id}__${idx}`} className="mt-[1rem]">
+                            {text}
+                          </p>
+                        ))}
+                      </div>
+                      <div className="mt-[1rem] mr-[1rem]">
+                        <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed mt-[1rem]  ">
+                          {theme.thirdName}
+                        </h1>
+                        {[].concat(thirddesc).map((text, idx) => (
+                          <p key={`${id}__${idx}`} className="mt-[1rem]">
+                            {text}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </Scrollbars>
                 </motion.div>
               </motion.div>
             );
