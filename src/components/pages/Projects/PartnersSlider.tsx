@@ -49,7 +49,7 @@ function PartnersSlider() {
     <>
       <div
         {...scrollSlide}
-        className="flex lg:w-[70%] w-full 2xl:w-full lg:h-full h-screen items-center px-[15px] "
+        className="flex lg:w-[70%] w-full pt-[4rem] lg:pt-0 2xl:w-full lg:h-full h-screen items-start lg:items-center px-[15px] "
       >
         <div className="xl:w-[23rem] w-full lg:h-[38rem]  justify-center items-center  text-left ">
           <div className="flex flex-row 2xl:w-[23rem] xl:w-[35rem] w-full h-[34rem]  lg:mt-[1rem]  pt-[2rem] ">

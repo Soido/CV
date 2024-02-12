@@ -23,7 +23,7 @@ function ProjectSliderAccVr() {
 
   return (
     <>
-      <div className="md:mt-[5rem] lg:mt-[3.5rem] xl:mt-[5rem] pt-[4rem] pb-[4rem] flex w-full h-full justify-center items-start  text-white  ">
+      <div className="md:mt-[5rem] lg:mt-[3.5rem] xl:mt-[5rem] pt-[4rem] md:pt-0 pb-[4rem]  flex w-full h-full justify-center items-start  text-white  ">
         <div className=" list-none flex w-full flex-col justify-center gap-2 ">
           {content.map((items: any, id: number) => {
             const { topic, theme, desc, secdesc, thirddesc } = items;
@@ -38,7 +38,7 @@ function ProjectSliderAccVr() {
                   isOpen ? "h-full" : ""
                 } w-full text-left `}
                 style={{
-                  height: isOpen ? `${heightWindow - length - 300}px` : "",
+                  height: isOpen ? `${heightWindow - length - 320}px` : "",
                 }}
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -70,7 +70,7 @@ function ProjectSliderAccVr() {
                 <motion.div
                   className={` shrink-0 pl-[1rem]  overflow-y-auto overflow-hidden  `}
                   style={{
-                    height: isOpen ? `${heightWindow - length - 360}px` : "",
+                    height: isOpen ? `${heightWindow - length - 380}px` : "",
                   }}
                   initial={{ x: 150, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
