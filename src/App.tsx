@@ -7,6 +7,8 @@ import Home from "./components/pages/Home/Home";
 import About from "./components/pages/About/About";
 import Projects from "./components/pages/Projects/Projects";
 import Contacts from "./components/pages/Contacts/Contacts";
+import ForEmployer from "./components/pages/ForEmployer/ForEmployer";
+import ReduxProject from "./components/pages/ForEmployer/ReduxProject/ReduxProject/ReduxProject";
 import NotFound from "./components/NotFound";
 import MainLayout from "./Layouts/MainLayout";
 
@@ -23,6 +25,11 @@ function App() {
               <Route index={true} /*можно без true */ element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="projects" element={<Projects />} />
+              <Route path="foremployer" element={<ForEmployer />} />
+              <Route
+                path="foremployer/reduxproject"
+                element={<ReduxProject />}
+              />
               <Route path="contacts" element={<Contacts />} />
               <Route path="*" element={<NotFound />} />
             </Route>

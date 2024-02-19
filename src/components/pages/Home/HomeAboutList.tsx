@@ -39,7 +39,7 @@ const HomeAboutList = () => {
           <motion.h2
             custom={2.2}
             variants={iconAnimation}
-            className={`font-thin tracking-widest text-[1.5rem] mb-[1rem] leading-relaxed lg:text-left text:center w-full`}
+            className={`font-thin tracking-widest text-[1.5rem] lg:mb-[1rem] leading-relaxed lg:text-left text:center w-full`}
           >
             {" "}
             Привет, Я Артем!

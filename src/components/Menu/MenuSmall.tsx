@@ -65,7 +65,7 @@ function MenuSmall() {
       </div>
       {open ? (
         <>
-          <div className="flex flex-row text-white w-[14rem] ml-[.5rem] justify-between text-[.8rem] ">
+          <div className="flex flex-row text-white w-full ml-[.5rem] pr-[1rem] justify-between text-[.8rem] ">
             <motion.div
               className={`${
                 location.pathname === "/about" ? " border-b-2" : null
@@ -89,6 +89,20 @@ function MenuSmall() {
             >
               {" "}
               <Link to="/projects"> Проекты</Link>
+            </motion.div>
+            <motion.div
+              className={`${
+                location.pathname === "/foremployer" ? " border-b-2" : null
+              } pb-1`}
+              initial={open ? { x: -50, opacity: 0 } : { x: 0, opacity: 1 }}
+              animate={
+                open
+                  ? { x: 0, opacity: 1, transition: { delay: 0.1 } }
+                  : { x: -50 }
+              }
+            >
+              {" "}
+              <Link to="/foremployer"> Работодателю </Link>
             </motion.div>
             <motion.div
               className={`${
