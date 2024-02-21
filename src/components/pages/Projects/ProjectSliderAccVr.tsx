@@ -41,7 +41,7 @@ function ProjectSliderAccVr() {
                   height: isOpen ? `${heightWindow - length - 320}px` : "",
                 }}
                 initial={{ x: -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                animate={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
                 key={id}
               >
                 <div
@@ -73,7 +73,7 @@ function ProjectSliderAccVr() {
                     height: isOpen ? `${heightWindow - length - 380}px` : "",
                   }}
                   initial={{ x: 150, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
+                  animate={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
                 >
                   <div>
                     <h2 className="font-thin tracking-widest text-[1.2rem] leading-relaxed  ">

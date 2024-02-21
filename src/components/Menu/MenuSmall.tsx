@@ -65,7 +65,7 @@ function MenuSmall() {
       </div>
       {open ? (
         <>
-          <div className="flex flex-row text-white w-full ml-[.5rem] pr-[1rem] justify-between text-[.8rem] ">
+          <div className="flex flex-row text-white w-[22rem] md:w-[30rem] ml-[.5rem] pr-[1rem] justify-between text-[.8rem] ">
             <motion.div
               className={`${
                 location.pathname === "/about" ? " border-b-2" : null

@@ -21,7 +21,7 @@ function MenuSmall() {
 
   return (
     <div className="flex flex-row items-start my-0 mx-auto  max-w-screen animate-fade-down animate-ease-in px-[15px] ">
-      <div className="ml-[2rem] relative flex w-full h-full items-center flex-row   ">
+      <div className="pl-[2rem] relative flex w-full h-full items-center flex-row   ">
         {location.pathname !== "/" ? (
           <>
             <div className="flex flex-row w-[13rem]">
@@ -115,7 +115,7 @@ function MenuSmall() {
           </>
         ) : null}
       </div>
-      <div className=" flex w-full h-[80px] justify-end items-center mr-[2rem] ">
+      <div className=" flex w-full h-[80px] justify-end items-center pr-[2rem] ">
         <MyButton>RU</MyButton>
         <MyButton>E</MyButton>
       </div>

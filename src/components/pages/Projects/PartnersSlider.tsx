@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 import contentItemsSlider, {
   IContentSlider,
@@ -47,7 +48,9 @@ function PartnersSlider() {
 
   return (
     <>
-      <div
+      <motion.div
+        initial={{ x: 150, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
         {...scrollSlide}
         className="flex lg:w-[70%] w-full pt-[4rem] lg:pt-0 2xl:w-full lg:h-full h-screen items-start lg:items-center px-[15px] "
       >
@@ -120,7 +123,7 @@ function PartnersSlider() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

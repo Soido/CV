@@ -37,7 +37,7 @@ function ProjectSliderAcc() {
               <motion.div
                 className={` flex overflow-hidden w-[14rem] h-full   text-left`}
                 initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                animate={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
                 style={{
                   width: isOpen ? `${widthWindow - 530 * (length - 1)}px` : "",
                 }}
@@ -81,7 +81,7 @@ function ProjectSliderAcc() {
                 <motion.div
                   className={` shrink-0 h-full py-[1rem] pl-[1rem]  overflow-y-auto overflow-hidden border-l-2  `}
                   initial={{ x: 150, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
+                  animate={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
                   style={{
                     width: isOpen ? `${widthWindow - 410 * length}px` : "",
                   }}

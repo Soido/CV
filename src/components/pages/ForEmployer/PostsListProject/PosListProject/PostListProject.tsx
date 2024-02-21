@@ -1,11 +1,27 @@
+import { useState } from "react";
+
 import { motion } from "framer-motion";
 
-import FilmForm from "./FilmForm/FilmForm";
-import FilmList from "./FilmList/FilmList";
-import Filter from "./Filter/Filter";
-import Error from "./Error/Error";
+import Counter from "./Counter/Counter";
+import PostList from "./Counter/PostList";
+import PostForm from "./Counter/PostForm";
 
 function ReduxProject() {
+  const [posts, setPosts] = useState([
+    { id: 1, title: "JavaScript", body: "Javascript- papa" },
+    { id: 2, title: "JavaScript1", body: "Javascript- papa" },
+    { id: 3, title: "JavaScript2", body: "Javascript- papa" },
+    { id: 4, title: "JavaScript3", body: "Javascript- papa" },
+  ]);
+
+  const createPost = (newPost: any) => {
+    setPosts([...posts, newPost]);
+  };
+
+  const deletePost = (post: any) => {
+    setPosts(posts.filter((p) => p.id !== post.id));
+  };
+
   return (
     <>
       <main className="w-screen lg:h-screen h-full">
@@ -17,7 +33,7 @@ function ReduxProject() {
             className="w-full text-left px-[1.5rem] lg:px-[2rem] xl:px-[5rem] font-thin tracking-widest text-[1.2rem] xl:text-[1.5rem] leading-relaxed xl:ml-[2rem] mb-[2rem]  lg:mb-[4rem]"
           >
             {" "}
-            Проект по подбору случайных фильмов с использоанием Redux
+            Проект по созданию постов
           </motion.h2>
           <div className=" flex lg:flex-row flex-col gap-6 px-[1.5rem] lg:px-[2rem] xl:mx-[5rem]">
             <motion.div
@@ -26,7 +42,7 @@ function ReduxProject() {
               viewport={{ once: true }}
               className="lg:w-[80%] w-full h-full "
             >
-              <FilmForm />
+              <PostForm create={createPost} />
             </motion.div>
             <motion.div
               initial={{ y: -150, opacity: 0 }}
@@ -34,13 +50,11 @@ function ReduxProject() {
               viewport={{ once: true }}
               className="flex flex-col w-full gap-4  h-full"
             >
-              <Filter />
-              <FilmList />
+              <PostList remove={deletePost} posts={posts} />
             </motion.div>
           </div>
         </motion.div>
       </main>
-      <Error />
     </>
   );
 }

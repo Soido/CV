@@ -70,7 +70,7 @@ const FilmList = () => {
       ) => {
         if (substring.toLowerCase() === filter.toLowerCase()) {
           return (
-            <span key={idx} className="highlight">
+            <span key={idx} className=" text-black bg-white">
               {substring}
             </span>
           );
@@ -92,7 +92,7 @@ const FilmList = () => {
           Вы не добавили ни один фильм{" "}
         </p>
       ) : (
-        <ul className="overflow-y-scroll p-0 list-none mt-[1rem] lg:h-[28rem] ">
+        <ul className="overflow-y-scroll p-0 list-none mt-[1rem] lg:h-[26rem] ">
           {filteredFilms.map(
             (
               film: {
@@ -117,10 +117,10 @@ const FilmList = () => {
                     : highLightMatch(film.title, titleFilter)}{" "}
                   <strong>
                     {film.author === "null"
-                      ? ""
-                      : `, ${highLightMatch(film.author, authorFilter)}, `}
+                      ? ","
+                      : highLightMatch(film.author, authorFilter)}
                   </strong>
-                  {highLightMatch(film.ganre, ganreFilter)}{" "}
+                  , {highLightMatch(film.ganre, ganreFilter)}{" "}
                   {film.year === "" ? "" : `, (${film.year})`} ({film.source})
                 </div>
                 <div className="flex items-center ">
@@ -135,7 +135,7 @@ const FilmList = () => {
                     className="text-red-600 border-2  border-red-600 py-1 px-2 rounded-md cursor-pointer "
                     onClick={() => hadleDelete(film.id)}
                   >
-                    Delete
+                    Удалить
                   </button>
                 </div>
               </li>

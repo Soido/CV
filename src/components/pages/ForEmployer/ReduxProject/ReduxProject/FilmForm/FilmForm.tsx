@@ -52,7 +52,7 @@ const FilmForm = () => {
     <div className=" w-full ">
       <h2 className="w-full text-left  font-thin tracking-widest text-[1.2rem]  leading-relaxed mb-[2rem] ">
         {" "}
-        Добавьте свой фильм для сравнения{" "}
+        Добавьте свой фильм для сравнения:{" "}
       </h2>
       <form className="" onSubmit={handleSubmit}>
         <div className=" w-full">
@@ -89,7 +89,7 @@ const FilmForm = () => {
             className=" cursor-pointer lg:py-1 lg:px-4 my-[.5rem] lg:m-[10px] border-b-2 border-b-transparent lg:hover:border-b-2 lg:hover:border-white"
             type="submit"
           >
-            Добавить свой фильм
+            Добавить свой фильм в список
           </button>
           <button
             className="cursor-pointer lg:py-1 lg:px-4 my-[.5rem] lg:m-[10px] border-b-2 border-b-transparent lg:hover:border-b-2 lg:hover:border-white"

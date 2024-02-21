@@ -7,6 +7,7 @@ import {
   BiLogoJavascript,
   BiLogoTypescript,
   BiLogoRedux,
+  BiChevronRight,
 } from "react-icons/bi";
 
 import { useNavigate } from "react-router-dom";
@@ -28,13 +29,13 @@ function AboutReduxProject() {
 
   return (
     <>
-      <div className="w-[99%] h-full text-white  flex pr-[1rem] py-[1rem] flex-col justify-end gap-4">
-        <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed text-right">
+      <div className="w-[99%] h-full text-white  flex px-[1rem] pt-0 pb-[1rem] lg:py-[1rem] flex-col justify-end gap-4">
+        <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed lg:text-right text-left">
           Проект Redux
         </h1>
         <div className="text-right flex w-full justify-end items-center">
           <motion.div
-            className="flex flex-row w-full text-2xl justify-end items-center gap-4"
+            className="flex flex-row w-full text-2xl lg:justify-end justify-start items-center gap-4"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -83,10 +84,11 @@ function AboutReduxProject() {
           </p>
         </div>
         <div
-          className="text-right cursor-pointer"
+          className="flex flex-row items-center h-full w-full justify-end cursor-pointer text-right "
           onClick={() => navigate("/foremployer/reduxproject")}
         >
-          <p>Ознакомиться с проектом</p>
+          <p className="pr-[.5rem]">Ознакомиться с проектом</p>
+          <BiChevronRight className="text-xl mt-[.2rem]" />
         </div>
       </div>
     </>

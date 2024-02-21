@@ -33,7 +33,7 @@ function About() {
     visible: (custom: number) => ({
       x: 0,
       opacity: 1,
-      transition: { delay: custom * 0.1 },
+      transition: { duration: 0.5 },
     }),
   };
 
@@ -58,13 +58,16 @@ function About() {
                 </motion.div>
               </div>
             </div>
-            <div
+            <motion.div
+              initial={{ x: 150, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
+              viewport={{ once: true }}
               {...scrollToTop}
               className="w-full lg:h-full flex lg:items-start xl:items-center justify-start xl:pr-[1rem]"
             >
               {" "}
               <VideoComp />
-            </div>
+            </motion.div>
           </div>
         </div>
       </main>

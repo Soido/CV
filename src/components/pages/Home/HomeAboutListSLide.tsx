@@ -16,7 +16,7 @@ const HomeAboutListSlide = () => {
       x: 0,
       opacity: 1,
       duration: 5,
-      transition: { delay: custom * 0.2 },
+      transition: { duration: 0.2 },
     }),
   };
   const TextAnimationRight = {
@@ -27,7 +27,7 @@ const HomeAboutListSlide = () => {
     visible: (custom: number) => ({
       x: 0,
       opacity: 1,
-      transition: { delay: custom * 0.2 },
+      transition: { duration: 0.2 },
     }),
   };
 
