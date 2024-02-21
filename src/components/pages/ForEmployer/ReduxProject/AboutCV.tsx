@@ -22,7 +22,7 @@ function AboutCV() {
               >
                 Инструменты
               </span>{" "}
-              и на данной страницу.
+              и на данной странице.
             </p>
           </div>
           <div className="text-left mt-[1rem]"></div>

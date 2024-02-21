@@ -1,44 +1,51 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FaSpinner } from "react-icons/fa";
-import createBookWithID from "../../../../../../utils/createBookWithID";
+
+import { AppDispatch } from "../../../../../../redux/store";
+
+import createFilmWithID from "../../../../../../utils/createFilmWithID";
+import { Oval } from "react-loader-spinner";
 
 import {
-  addBook,
-  fetchBook,
+  addFilm,
+  fetchFilm,
   selecIsLoadingViaAPI,
-} from "../../../../../../redux/slices/booksSlice.js";
+} from "../../../../../../redux/slices/filmSlice";
 import { setError } from "../../../../../../redux/slices/errorSlice";
-import booksData from "../../../../../data/books.json";
-import "./BookForm.css";
+import filmsData from "../../../../../data/films.json";
 
-const BookForm = () => {
+const FilmForm = () => {
   const [title, setTitle] = useState("");
+  const [ganre, setGanre] = useState("");
+  const [year, setYear] = useState("");
   const isLoadingViaAPI: any = useSelector(selecIsLoadingViaAPI);
   const [author, setAuthor] = useState("");
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
-  const handleRandomBook = () => {
-    const randomIndex = Math.floor(Math.random() * booksData.length);
-    const randomBook: { title: string; author: string; year?: number } =
-      booksData[randomIndex];
-    dispatch(addBook(createBookWithID(randomBook, "random")));
+  const handleRandomFilm = () => {
+    const randomIndex = Math.floor(Math.random() * filmsData.length);
+    const randomFilm: any = filmsData[randomIndex];
+    dispatch(addFilm(createFilmWithID(randomFilm, "Мои Топ-лист")));
   };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (title && author) {
-      dispatch(addBook(createBookWithID({ title, author }, "manual")));
+      dispatch(
+        addFilm(createFilmWithID({ title, author, ganre, year }, "Свой выбор"))
+      );
       setTitle("");
       setAuthor("");
+      setGanre("");
+      setYear("");
     } else {
-      dispatch(setError("You must fill title and author!"));
+      dispatch(setError("Вам необходимо ввести название фильма и режиссера"));
     }
   };
 
-  const handleAddRandomBookViaAPI = () => {
-    /*  dispatch(fetchBook("http://localhost:4000/random-book-delayed")); */
+  const handleAddRandomFilmViaAPI = () => {
+    dispatch(fetchFilm());
   };
 
   return (
@@ -79,28 +86,34 @@ const BookForm = () => {
         </div>
         <div className="w-full flex lg:flex-row flex-col lg:justify-between lg:items-center lg:mx-auto justify-start items-start">
           <button
-            className=" cursor-pointer lg:py-1 lg:px-4 my-[.5rem] lg:m-[10px] lg:hover:border-b-2"
+            className=" cursor-pointer lg:py-1 lg:px-4 my-[.5rem] lg:m-[10px] border-b-2 border-b-transparent lg:hover:border-b-2 lg:hover:border-white"
             type="submit"
           >
             Добавить свой фильм
           </button>
           <button
-            className="cursor-pointer lg:py-1 lg:px-4 my-[.5rem] lg:m-[10px] lg:hover:border-b-2"
+            className="cursor-pointer lg:py-1 lg:px-4 my-[.5rem] lg:m-[10px] border-b-2 border-b-transparent lg:hover:border-b-2 lg:hover:border-white"
             type="button"
-            onClick={handleRandomBook}
+            onClick={handleRandomFilm}
           >
-            Добавить случайный фильм
+            Фильм из Моего топ-листа
           </button>
 
           <button
-            className=" cursor-pointer lg:py-1 lg:px-4 my-[.5rem] lg:m-[10px] lg:hover:border-b-2"
+            className="flex flex-row items-center cursor-pointer lg:py-1 lg:px-4 my-[.5rem] lg:m-[10px] border-b-2 border-b-transparent lg:hover:border-b-2 lg:hover:border-white"
             type="button"
-            onClick={handleAddRandomBookViaAPI}
+            onClick={handleAddRandomFilmViaAPI}
             disabled={isLoadingViaAPI}
           >
             {isLoadingViaAPI ? (
               <>
-                <span>Loading book </span> <FaSpinner className="spinner" />{" "}
+                <span className="mr-[1rem]">Загрузка фильмов </span>{" "}
+                <Oval
+                  height={23}
+                  width={23}
+                  color="white"
+                  ariaLabel="loading"
+                />{" "}
               </>
             ) : (
               "Добавить фильм из API"
@@ -112,4 +125,4 @@ const BookForm = () => {
   );
 };
 
-export default BookForm;
+export default FilmForm;

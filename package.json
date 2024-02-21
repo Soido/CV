@@ -31,6 +31,7 @@
     "react-swipeable": "^7.0.1",
     "react-toastify": "^10.0.4",
     "react-use": "^17.4.2",
+    "toastify": "^2.0.1",
     "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
   },

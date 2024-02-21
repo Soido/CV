@@ -46,7 +46,8 @@ const HomeAboutListSlide = () => {
           onClick={() => navigate("/projects")}
         >
           <p className="  tracking-widest  text-[1rem]  mt-[1rem] leading-relaxed">
-            Ознакомьтесь с информцией о разработке и моих проектах
+            Ознакомьтесь с информцией о разработке сайов и моих проектах (для
+            Заказчиков)
           </p>
           <button
             className=" px-[1rem] cursor-pointer text-xl mt-0 text-right "
@@ -62,17 +63,17 @@ const HomeAboutListSlide = () => {
           viewport={{ once: true }}
           custom={1}
           variants={TextAnimationRight}
-          onClick={() => navigate("/contacts")}
+          onClick={() => navigate("/foremployer")}
         >
           <button
             className=" cursor-pointer text-xl mt-0 px-[1rem] "
-            onClick={() => navigate("/contacts")}
+            onClick={() => navigate("/foremployer")}
           >
             <BiChevronLeft />
           </button>
           <p className="tracking-widest text-right text-[1rem] mt-[1rem] leading-relaxed">
-            Задайте вопрос о разработке веб-сайтов, их стоимости и возможности
-            нанять меня
+            Ознакомьтесь с практическими навыками в разработке (для
+            Работодателей)
           </p>
         </motion.div>
       </div>
