@@ -2,8 +2,12 @@ import React from "react";
 import PostItem from "./PostItem";
 
 const PostList = ({ posts, remove }: any) => {
+  if (!posts.length) {
+    return <h2>Посты не найдены</h2>;
+  }
+
   return (
-    <div>
+    <div className="h-[35rem]  w-full pr-[2rem] overflow-y-auto">
       {posts.map((post: any, index: number) => (
         <PostItem
           remove={remove}

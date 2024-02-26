@@ -9,7 +9,7 @@ import Projects from "./components/pages/Projects/Projects";
 import Contacts from "./components/pages/Contacts/Contacts";
 import ForEmployer from "./components/pages/ForEmployer/ForEmployer";
 import ReduxProject from "./components/pages/ForEmployer/ReduxProject/ReduxProject/ReduxProject";
-import PostListProject from "./components/pages/ForEmployer/PostsListProject/PosListProject/PostListProject";
+import PostListProject from "./components/pages/ForEmployer/PostsListProject/PosListProject/PostListProject.jsx";
 import NotFound from "./components/NotFound";
 import MainLayout from "./Layouts/MainLayout";
 
