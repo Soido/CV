@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-
+import { useEffect, useState } from "react";
+import _ from "lodash";
 import { motion } from "framer-motion";
 import { Oval } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
@@ -12,12 +12,11 @@ import MyModal from "../../../../../UX/UI/MyModal";
 import { usePosts } from "../../../../../hooks/usePosts";
 import PostService from "../../../../../API/PostSrvice";
 import { useFetching } from "../../../../../hooks/useFetching";
-import { getPagesArray, getPagesCount } from "../../../../../utils/pages";
-import MyButton from "../../../../../UX/UI/MyButton";
+import { getPagesCount } from "../../../../../utils/pages";
 import Pagination from "../../../../../UX/UI/Pagination";
 
 function PostListProject() {
-  const [posts, setPosts] = useState([{ id: "", title: "", body: "" }]);
+  const [posts, setPosts] = useState([]);
   const [filter, setFilter] = useState({ sort: "", query: "" });
   const [modal, setModal] = useState(false);
   const sortedAndSearchPosts = usePosts(posts, filter.sort, filter.query);
@@ -47,7 +46,7 @@ function PostListProject() {
   };
 
   const deletePost = (post /* : any */) => {
-    setPosts(posts.filter((p) => p.id !== post.id));
+    setPosts(_.filter(posts, (p) => p.id !== post.id));
   };
 
   const chngPage = (page) => {
@@ -62,12 +61,12 @@ function PostListProject() {
             initial={{ x: -150, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
             viewport={{ once: true }}
-            className="w-full text-left px-[1.5rem] lg:px-[2rem] xl:px-[5rem] font-thin tracking-widest text-[1.2rem] xl:text-[1.5rem] leading-relaxed xl:ml-[2rem] mb-[2rem]  lg:mb-[4rem]"
+            className="w-full text-left px-[1.5rem] lg:px-[2rem] 2xl:px-[5rem] font-thin tracking-widest text-[1.2rem] xl:text-[1.5rem] leading-relaxed 2xl:ml-[2rem] mb-[2rem]  lg:mb-[4rem]"
           >
             {" "}
             Проект по созданию постов
           </motion.h2>
-          <div className=" flex lg:flex-row w-full flex-col gap-6 px-[1.5rem] lg:px-[2rem] xl:ml-[5rem]">
+          <div className=" flex lg:flex-row w-full flex-col gap-6 px-[1.5rem] lg:px-[2rem] 2xl:ml-[5rem]">
             <motion.div
               initial={{ y: 150, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
@@ -75,14 +74,14 @@ function PostListProject() {
               className="lg:w-[80%] w-full h-full "
             >
               {" "}
-              <div className="w-full flex justify-start m-[1rem] ">
+              <div className="w-full flex justify-start  ">
                 <button
                   className="border-b-2 border-transparent hover:border-white"
                   onClick={() => {
                     setModal(true);
                   }}
                 >
-                  Создать Пользователя
+                  Создать Пост
                 </button>
               </div>
               <MyModal visible={modal} setVisible={setModal}>
@@ -95,7 +94,7 @@ function PostListProject() {
               initial={{ y: -150, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
               viewport={{ once: true }}
-              className="flex flex-col w-full gap-4 h-full 2xl:pr-[6rem] "
+              className="flex flex-col w-full gap-4 h-full  2xl:pr-[10rem] "
             >
               {postError && modalPostError()}
               {isPostLoading ? (
@@ -113,6 +112,7 @@ function PostListProject() {
               ) : (
                 <>
                   <PostList remove={deletePost} posts={sortedAndSearchPosts} />
+
                   <Pagination
                     totalPages={totalPages}
                     page={page}

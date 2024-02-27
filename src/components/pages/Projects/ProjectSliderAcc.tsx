@@ -1,11 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import _ from "lodash";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { useWindowSize } from "react-use";
-
 import { motion } from "framer-motion";
-
-import useHover from "../../../hooks/useHover";
 
 import { RxDot } from "react-icons/rx";
 
@@ -14,10 +11,8 @@ import { BiChevronRight } from "react-icons/bi";
 import contentItems from "../../data/ProjectData";
 
 function ProjectSliderAcc() {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
   let widthWindow = width;
-  const ref = useRef(null);
-  const isHovering = useHover(ref);
 
   const [content, setContent] = useState(contentItems);
   const [openId, setOpenId] = useState(0);
@@ -26,7 +21,7 @@ function ProjectSliderAcc() {
     <>
       <div className="flex w-full h-[38rem] justify-center items-center  text-white  mx-auto ">
         <div className=" list-none flex w-full h-full  pt-[4rem] flex-row justify-center gap-4">
-          {content.map((items: any, id: number) => {
+          {_.map(content, (items: any, id: number) => {
             const { topic, cont, theme, desc, secdesc, thirddesc } = items;
 
             let isOpen = id === openId;
@@ -99,7 +94,7 @@ function ProjectSliderAcc() {
                           {theme.firstName}
                         </h1>
 
-                        {[].concat(desc).map((text, idx) => (
+                        {_.map(_.concat(desc), (text, idx) => (
                           <p key={`${id}__${idx}`} className="mt-[1rem]">
                             {text}
                           </p>
@@ -109,7 +104,7 @@ function ProjectSliderAcc() {
                         <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed mt-[1rem] ">
                           {theme.secondName}
                         </h1>
-                        {[].concat(secdesc).map((text, idx) => (
+                        {_.map(_.concat(secdesc), (text, idx) => (
                           <p key={`${id}__${idx}`} className="mt-[1rem]">
                             {text}
                           </p>
@@ -119,7 +114,7 @@ function ProjectSliderAcc() {
                         <h1 className="font-thin tracking-widest text-[1.5rem] leading-relaxed mt-[1rem]  ">
                           {theme.thirdName}
                         </h1>
-                        {[].concat(thirddesc).map((text, idx) => (
+                        {_.map(_.concat(thirddesc), (text, idx) => (
                           <p key={`${id}__${idx}`} className="mt-[1rem]">
                             {text}
                           </p>

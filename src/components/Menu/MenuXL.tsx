@@ -13,15 +13,16 @@ function MenuSmall() {
   const location = useLocation();
 
   const fetchData = () => {
-    setOpen(true);
+    if (open !== true) {
+    }
     setTimeout(() => {
       setOpen(false);
-    }, 15000);
+    }, 20000);
   };
 
   return (
     <div className="flex flex-row items-start my-0 mx-auto  max-w-screen animate-fade-down animate-ease-in px-[15px] ">
-      <div className="pl-[2rem] relative flex w-full h-full items-center flex-row   ">
+      <div className="pl-[2rem] relative flex w-full h-full items-center flex-row z-10  ">
         {location.pathname !== "/" ? (
           <>
             <div className="flex flex-row w-[13rem]">
@@ -79,7 +80,7 @@ function MenuSmall() {
                     }
                   >
                     {" "}
-                    <Link to="/projects"> Проекты</Link>
+                    <Link to="/projects"> Заказчику</Link>
                   </motion.div>
                   <motion.div
                     className={`${
@@ -92,7 +93,7 @@ function MenuSmall() {
                     }
                     animate={
                       open
-                        ? { x: 0, opacity: 1, transition: { delay: 0.1 } }
+                        ? { x: 0, opacity: 1, transition: { delay: 0.2 } }
                         : { x: -50 }
                     }
                   >
@@ -104,7 +105,7 @@ function MenuSmall() {
                       location.pathname === "/contacts" ? " border-b-2" : null
                     } pb-1`}
                     initial={{ x: -50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1, transition: { delay: 0.2 } }}
+                    animate={{ x: 0, opacity: 1, transition: { delay: 0.3 } }}
                   >
                     {" "}
                     <Link to="/contacts">Контакты</Link>
@@ -115,10 +116,21 @@ function MenuSmall() {
           </>
         ) : null}
       </div>
-      <div className=" flex w-full h-[80px] justify-end items-center pr-[2rem] ">
-        <MyButton>RU</MyButton>
-        <MyButton>E</MyButton>
-      </div>
+      {location.pathname === "/foremployer/postlistproject" ||
+      location.pathname === "/foremployer/reduxproject" ? (
+        <div className="flex pr-[2rem] top-0 w-full justify-end items-center h-[5rem] text-[1rem] z-10">
+          <div
+            className="flex flex-row "
+            onClick={() => {
+              navigate("/foremployer");
+            }}
+          >
+            <MyButton>Вернуться к спику проектов</MyButton>
+          </div>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

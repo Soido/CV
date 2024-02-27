@@ -4,7 +4,7 @@ import MenuXL from "./MenuXL";
 import { useWindowSize } from "react-use";
 
 function Menu() {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
 
   return (
     <header

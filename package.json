@@ -4,6 +4,7 @@
   "homepage": "https://soido.github.io/CV",
   "private": false,
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "@reduxjs/toolkit": "^2.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -11,8 +12,13 @@ import {
   BiChevronRight,
 } from "react-icons/bi";
 
+import MyModal from "../../../../UX/UI/MyModal";
+
+import DescriptionPostList from "./DescriptionPostList";
+
 function AboutPostListProject() {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
   const iconAnimation = {
     hidden: {
@@ -61,24 +67,35 @@ function AboutPostListProject() {
         </motion.div>
         <div className="text-left">
           <p>
-            Проект подбора фильма для просмотра из удаленного API, который вы
-            можете использовать прямо сейчас.
+            Проект получения массива постов с удаленного сервера
+            json.placeholder, в формате JSON.
           </p>
           <p>
-            В проекте реализована возможность случайного выбора фильмов со
-            стороннего сервера. Возможность сортировки списка по нескольким
-            параметрам, в том числе включения в изабранное. Реальзована функция
-            ввода данных. А также обработчик возможных ошибок
+            В проекте реализована возможность загрузки массивов данных и
+            размещения их в разметке tsx. Реализована постраничная пагинация, и
+            возможность написания постов со страницы проекта.
           </p>
         </div>
         <div className="text-left">
           <p>
-            В проекте использованы технологии Redux и Redux-toolkit, а также
-            следующие библиотеки: axios, express, express, react-toastify, uuid.
+            В проекте использованы технологии Reaсt, а также следующие
+            библиотеки: axios, framer-motion, react-toastify.
           </p>
         </div>
+        <div className="w-full h-full flex justify-end items-center mt-[2rem]">
+          <p className=" cursor-pointer h-full" onClick={() => setOpen(!open)}>
+            Подробнее
+          </p>
+          <BiChevronRight className="h-full text-xl pt-[.2rem] ml-[.5rem]" />
+        </div>
+
+        {open ? (
+          <MyModal visible={open} setVisible={setOpen}>
+            <DescriptionPostList />
+          </MyModal>
+        ) : null}
         <div
-          className="flex flex-row items-center h-full w-full justify-end cursor-pointer text-right pr-[1rem] lg:pr-0"
+          className="flex flex-row items-center h-full w-full justify-end cursor-pointer text-right  lg:pr-0"
           onClick={() => navigate("/foremployer/postlistproject")}
         >
           <p className="pr-[.5rem]">Ознакомиться с проектом</p>

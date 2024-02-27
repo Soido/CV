@@ -1,5 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useWindowSize } from "react-use";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 import { RxDot } from "react-icons/rx";
 
@@ -8,19 +10,38 @@ import { motion } from "framer-motion";
 import MyButton from "../../UX/UI/MyButton";
 
 function MenuSmall() {
+  const [hideOnScroll, setHideOnScroll] = useState(true);
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isShow = currPos.y > prevPos.y;
+      if (isShow !== hideOnScroll) setHideOnScroll(isShow);
+    },
+    [hideOnScroll]
+  );
+
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   const fetchData = () => {
-    setOpen(true);
+    if (open !== true) {
+    }
     setTimeout(() => {
       setOpen(false);
-    }, 15000);
+    }, 20000);
   };
 
   return (
-    <div className="flex flex-col items-start my-0 mx-auto  max-w-screen px-[15px] ">
+    <div
+      className={`flex flex-col items-start my-0 mx-auto  max-w-screen px-[15px] ${
+        location.pathname !== "/"
+          ? !hideOnScroll
+            ? "invisible"
+            : " backdrop-blur-md"
+          : null
+      } `}
+    >
       <div className="flex flex-row  w-full justify-between items-center h-full ">
         <div className=" relative flex lg:w-full h-full items-center w-[10rem] z-10">
           {location.pathname !== "/" ? (
@@ -56,12 +77,21 @@ function MenuSmall() {
             </>
           ) : null}
         </div>
-        <div className="flex md:fixed sm:right-1 md:right-8 top-0 w-full justify-end items-center h-[5rem] text-[.6rem] -z-1">
-          <div className="flex flex-row ">
-            <MyButton>RU</MyButton>
-            <MyButton>E</MyButton>
+        {location.pathname === "/foremployer/postlistproject" ||
+        location.pathname === "/foremployer/reduxproject" ? (
+          <div className="flex md:fixed sm:right-1 md:right-8 top-0 w-full justify-end items-center h-[5rem] text-[.6rem] -z-1">
+            <div
+              className="flex flex-row "
+              onClick={() => {
+                navigate("/foremployer");
+              }}
+            >
+              <MyButton>Вернуться к спику проектов</MyButton>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div></div>
+        )}
       </div>
       {open ? (
         <>
@@ -88,7 +118,7 @@ function MenuSmall() {
               }
             >
               {" "}
-              <Link to="/projects"> Проекты</Link>
+              <Link to="/projects"> Заказчику</Link>
             </motion.div>
             <motion.div
               className={`${

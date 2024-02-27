@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 import { FaReact, FaNodeJs } from "react-icons/fa6";
 import { SiLodash } from "react-icons/si";
@@ -10,10 +12,13 @@ import {
   BiChevronRight,
 } from "react-icons/bi";
 
-import { useNavigate } from "react-router-dom";
+import MyModal from "../../../../UX/UI/MyModal";
+
+import DescriptionRedux from "./DescriptionRedux";
 
 function AboutReduxProject() {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
   const iconAnimation = {
     hidden: {
@@ -58,7 +63,7 @@ function AboutReduxProject() {
               <BiLogoJavascript />
             </motion.div>
             <motion.div custom={12} variants={iconAnimation}>
-              <FaReact className="cursor-pointer App-logo " />
+              <FaReact className="cursor-pointer App-logo -z-10 " />
             </motion.div>
             <motion.div custom={13} variants={iconAnimation}>
               <BiLogoRedux className="text-white" />
@@ -73,7 +78,7 @@ function AboutReduxProject() {
           <p>
             В проекте реализована возможность случайного выбора фильмов со
             стороннего сервера. Возможность сортировки списка по нескольким
-            параметрам, в том числе включения в изабранное. Реальзована функция
+            параметрам, в том числе включения в избранное. Реализована функция
             ввода данных. А также обработчик возможных ошибок
           </p>
         </div>
@@ -83,8 +88,20 @@ function AboutReduxProject() {
             следующие библиотеки: axios, express, react-toastify, uuid.
           </p>
         </div>
+        <div className="w-full h-full flex justify-end items-center mt-[2rem]">
+          <p className=" cursor-pointer h-full" onClick={() => setOpen(!open)}>
+            Подробнее
+          </p>
+          <BiChevronRight className="h-full text-xl -mt-[.2rem] ml-[.5rem]" />
+        </div>
+
+        {open ? (
+          <MyModal visible={open} setVisible={setOpen}>
+            <DescriptionRedux />
+          </MyModal>
+        ) : null}
         <div
-          className="flex flex-row items-center h-full w-full justify-end cursor-pointer text-right "
+          className="flex flex-row items-center h-full w-full justify-end cursor-pointer text-right -pt- "
           onClick={() => navigate("/foremployer/reduxproject")}
         >
           <p className="pr-[.5rem]">Ознакомиться с проектом</p>

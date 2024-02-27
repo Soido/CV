@@ -6,7 +6,7 @@ function AboutCV() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="w-full xl:h-[24rem] 2xl:h-[23rem] h-full text-white flex px-[1rem] pt-[1rem] pb-[4rem] md:pb-[3rem] lg:py-[2rem] flex-col justify-end items-end gap-4 ">
+      <div className="w-full xl:h-[24rem] 2xl:h-[21.5rem] h-full text-white flex px-[1rem] pt-[1rem] pb-[4rem] md:pb-[3rem] lg:pb-[1rem] xl:pb-0 lg:py-[2rem] flex-col justify-end items-end gap-4 ">
         <div className="xl:w-[60%] w-full">
           <h1 className="font-thin tracking-widest text-[1.2rem] leading-relaxed xl:text-right text-left">
             Сайт визитка для frontend разработчика

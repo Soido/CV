@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-
+import _ from "lodash";
 import { BsBookmarkStarFill, BsBookmarkStar } from "react-icons/bs";
-
+import { Scrollbars } from "react-custom-scrollbars-2";
 import {
   selectTitleFilter,
   selectAuthorFilter,
@@ -40,17 +40,20 @@ const FilmList = () => {
       ganre: string;
       isFavorite: any;
     }) => {
-      const matchesTitle = film.title
-        .toLowerCase()
-        .includes(titleFilter.toLowerCase());
+      const matchesTitle = _.includes(
+        film.title.toLowerCase(),
+        titleFilter.toLowerCase()
+      );
 
-      const matchesAuthor = film.author
-        .toLowerCase()
-        .includes(authorFilter.toLowerCase());
+      const matchesAuthor = _.includes(
+        film.author.toLowerCase(),
+        authorFilter.toLowerCase()
+      );
 
-      const matchesGanre = film.ganre
-        .toLowerCase()
-        .includes(ganreFilter.toLowerCase());
+      const matchesGanre = _.includes(
+        film.ganre.toLowerCase(),
+        ganreFilter.toLowerCase()
+      );
 
       const matchesFavorite = onlyFavorite ? film.isFavorite : true;
 
@@ -62,7 +65,8 @@ const FilmList = () => {
     if (!filter) return text;
     const regex = new RegExp(`(${filter})`, "gi");
 
-    return text.split(regex).map(
+    return _.map(
+      text.split(regex),
       (
         substring: string,
 
@@ -93,54 +97,64 @@ const FilmList = () => {
         </p>
       ) : (
         <ul className="overflow-y-scroll p-0 list-none mt-[1rem] lg:h-[26rem] ">
-          {filteredFilms.map(
-            (
-              film: {
-                id: string;
-                title: string;
-                author: string;
-                ganre: string;
-                year: string | number;
-                source: string;
-                isFavorite: boolean;
-              },
-              i: number
-            ) => (
-              <li
-                className="flex justify-between items-center w-auto py-[1rem] lg:px-[2rem] border-b-2 list-none "
-                key={film.id}
-              >
-                <div className="flex-1 text-left ">
-                  {++i}.{" "}
-                  {film.title === "null"
-                    ? ""
-                    : highLightMatch(film.title, titleFilter)}{" "}
-                  <strong>
-                    {film.author === "null"
-                      ? ","
-                      : highLightMatch(film.author, authorFilter)}
-                  </strong>
-                  , {highLightMatch(film.ganre, ganreFilter)}{" "}
-                  {film.year === "" ? "" : `, (${film.year})`} ({film.source})
-                </div>
-                <div className="flex items-center ">
-                  <span onClick={() => handleToggleFavorite(film.id)}>
-                    {film.isFavorite ? (
-                      <BsBookmarkStarFill className="w-[1.5rem] h-[1.5rem] my-0 mx-[1.5rem] cursor-pointer text-yellow-400" />
-                    ) : (
-                      <BsBookmarkStar className="w-[1.5rem] h-[1.5rem] my-0 mx-[1.5rem] cursor-pointer " />
-                    )}
-                  </span>
-                  <button
-                    className="text-red-600 border-2  border-red-600 py-1 px-2 rounded-md cursor-pointer "
-                    onClick={() => hadleDelete(film.id)}
-                  >
-                    Удалить
-                  </button>
-                </div>
-              </li>
-            )
-          )}
+          {" "}
+          <Scrollbars
+            style={{
+              width: "100%",
+              height: "100%",
+              color: "#ffffff",
+            }}
+          >
+            {_.map(
+              filteredFilms,
+              (
+                film: {
+                  id: string;
+                  title: string;
+                  author: string;
+                  ganre: string;
+                  year: string | number;
+                  source: string;
+                  isFavorite: boolean;
+                },
+                i: number
+              ) => (
+                <li
+                  className="flex justify-between items-center w-auto py-[1rem] lg:px-[2rem] border-b-2 list-none "
+                  key={film.id}
+                >
+                  <div className="flex-1 text-left ">
+                    {++i}.{" "}
+                    {film.title === "null"
+                      ? ""
+                      : highLightMatch(film.title, titleFilter)}{" "}
+                    <strong>
+                      {film.author === "null"
+                        ? ","
+                        : highLightMatch(film.author, authorFilter)}
+                    </strong>
+                    , {highLightMatch(film.ganre, ganreFilter)}{" "}
+                    {film.year === "" ? "" : `, (${film.year})`} ({film.source})
+                  </div>
+                  <div className="flex items-center ">
+                    <span onClick={() => handleToggleFavorite(film.id)}>
+                      {film.isFavorite ? (
+                        <BsBookmarkStarFill className="w-[1.5rem] h-[1.5rem] my-0 mx-[1.5rem] cursor-pointer text-yellow-400" />
+                      ) : (
+                        <BsBookmarkStar className="w-[1.5rem] h-[1.5rem] my-0 mx-[1.5rem] cursor-pointer " />
+                      )}
+                    </span>
+                    <button
+                      className="text-red-600 border-2  border-red-600 py-1 px-2 rounded-md cursor-pointer "
+                      onClick={() => hadleDelete(film.id)}
+                    >
+                      Удалить
+                    </button>
+                  </div>
+                </li>
+              )
+            )}
+          </Scrollbars>
         </ul>
       )}
     </div>

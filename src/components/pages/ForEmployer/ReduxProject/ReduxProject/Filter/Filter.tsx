@@ -19,10 +19,10 @@ const Filter = () => {
   const ganreFilter = useSelector(selectGanreFilter);
   const onlyFavoriteFilter = useSelector(selectOnlyFavoriteFilter);
 
-  const handleTitleFilterChange = (e: { target: { value: any } }) => {
+  const handleTitleFilterChange = (e: { target: { value: string } }) => {
     dispatch(setTitleFilter(e.target.value));
   };
-  const handleAuthorChange = (e: { target: { value: any } }) => {
+  const handleAuthorChange = (e: { target: { value: string } }) => {
     dispatch(setAuthorFilter(e.target.value));
   };
   const handleGanreChange = (e: { target: { value: string } }) => {

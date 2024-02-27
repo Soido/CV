@@ -4,6 +4,7 @@ import { useSwipeable } from "react-swipeable";
 import skillsData, { ISkills } from "../../data/skillsData";
 
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import _ from "lodash";
 
 function SkillSlider() {
   const [description, setDescription] = useState(skillsData);
@@ -49,7 +50,7 @@ function SkillSlider() {
         </button>
         <section {...scrollSlide} className="w-full  mx-auto">
           <div className=" relative flex  2xl:mt-[2rem] lg:mt-0 mt-[2rem] lg:h-[16rem] xl:h-[22rem] 2xl:h-[26rem] h-[28rem] w-full text-center overflow-hidden">
-            {description.map((skill: ISkills, skillIndex: number) => {
+            {_.map(description, (skill: ISkills, skillIndex: number) => {
               const { id, icon: Icon, name, desc } = skill;
 
               let position = "translate-x-full";

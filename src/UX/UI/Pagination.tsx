@@ -1,4 +1,4 @@
-import React from "react";
+import _ from "lodash";
 
 const Pagination = ({
   totalPages,
@@ -13,17 +13,20 @@ const Pagination = ({
   for (let i = 0; i < totalPages; i++) {
     PagesArray.push(i + 1);
   }
+
   return (
     <div
-      className="w-full flex flex-row justify-center 
+      className="w-full flex flex-row justify-center p-[1rem]
               "
     >
-      {PagesArray.map((p) => (
+      {_.map(PagesArray, (p) => (
         <span
           className={`cursor-pointer border-2 p-[.5rem] ${
             page === p ? " border-white" : "border-transparent"
           }`}
-          onClick={() => chngPage(p)}
+          onClick={() => {
+            chngPage(p);
+          }}
           key={p}
         >
           {p}

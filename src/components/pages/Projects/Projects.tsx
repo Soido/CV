@@ -5,7 +5,7 @@ import ProjectSliderAccVr from "./ProjectSliderAccVr";
 import PartnersSlider from "./PartnersSlider";
 
 function Projects() {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
 
   return (
     <>

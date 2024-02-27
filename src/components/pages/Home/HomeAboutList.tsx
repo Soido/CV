@@ -61,7 +61,7 @@ const HomeAboutList = () => {
         <motion.div
           custom={1.8}
           variants={iconAnimation}
-          className=" cursor-pointer flex justify-center items-center text-4xl    z-10"
+          className=" cursor-pointer animate-bounce  flex justify-center items-center text-4xl    z-10"
           onClick={() => {
             setOpen(!open);
           }}

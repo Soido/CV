@@ -18,18 +18,18 @@ const FilmForm = () => {
   const [title, setTitle] = useState("");
   const [ganre, setGanre] = useState("");
   const [year, setYear] = useState("");
-  const isLoadingViaAPI: any = useSelector(selecIsLoadingViaAPI);
+  const isLoadingViaAPI: boolean = useSelector(selecIsLoadingViaAPI);
   const [author, setAuthor] = useState("");
 
   const dispatch = useDispatch<AppDispatch>();
 
   const handleRandomFilm = () => {
     const randomIndex = Math.floor(Math.random() * filmsData.length);
-    const randomFilm: any = filmsData[randomIndex];
+    const randomFilm = filmsData[randomIndex];
     dispatch(addFilm(createFilmWithID(randomFilm, "Мои Топ-лист")));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (title && author) {
       dispatch(

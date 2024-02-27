@@ -2,7 +2,7 @@ import React from "react";
 
 const MySelect = ({ options, defaultValue, value, onChange }: any) => {
   return (
-    <div className=" bg-transparent text-white m-[1rem] border-2">
+    <div className=" bg-transparent text-white mt-[1rem]  border-2">
       <select
         className=" bg-transparent text-white"
         value={value}

@@ -8,6 +8,7 @@ function PostListProjectAndSkills() {
     <>
       <div className="w-full h-full text-white  flex lg:flex-row flex-col justify-between gap-1 lg:gap-4">
         <motion.div
+          className="w-full"
           initial={{ y: -150, opacity: 0 }}
           whileInView={{
             y: 0,
@@ -19,9 +20,11 @@ function PostListProjectAndSkills() {
           <AboutSkills />
         </motion.div>
         <motion.div
+          className="w-[95%]"
           initial={{ x: 150, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
+          viewport={{ once: true }}
         >
           <AboutPostListProject />
         </motion.div>

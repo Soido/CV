@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import _ from "lodash";
 import MyInput from "../../../../../../../UX/UI/MyInput";
 
 const PostForm = ({ create }: any) => {
-  const addNewPost = (e: any) => {
+  const addNewPost = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const newPost = {
       ...post,
-      id: Date.now(),
+      id: _.now(),
     };
     create(newPost);
     setPost({ title: "", body: "" });

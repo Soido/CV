@@ -7,7 +7,9 @@ import "./Home.css";
 import useHover from "../../../hooks/useHover";
 
 import { FaReact, FaGitAlt, FaNodeJs } from "react-icons/fa6";
+import { SiLodash } from "react-icons/si";
 import {
+  BiLogoRedux,
   BiLogoTailwindCss,
   BiLogoJavascript,
   BiLogoTypescript,
@@ -70,12 +72,7 @@ const HomeSkillsList = () => {
               <BiLogoJavascript className="cursor-pointer " />
             </a>
           </motion.div>
-          <motion.div custom={9} variants={iconAnimation}>
-            <a href="https://react.dev/" title="React Site">
-              {" "}
-              <FaReact className="cursor-pointer App-logo " />
-            </a>
-          </motion.div>
+
           <motion.div custom={10} variants={iconAnimation}>
             <a
               href="https://www.typescriptlang.org/"
@@ -85,16 +82,35 @@ const HomeSkillsList = () => {
               <BiLogoTypescript className="cursor-pointer " />
             </a>
           </motion.div>
+          <motion.div custom={9} variants={iconAnimation}>
+            <a href="https://react.dev/" title="React Site">
+              {" "}
+              <FaReact className="cursor-pointer App-logo " />
+            </a>
+          </motion.div>
           <motion.div custom={11} variants={iconAnimation}>
+            <a href="https://redux.js.org/" title="Redux Site">
+              {" "}
+              <BiLogoRedux className="cursor-pointer  " />
+            </a>
+          </motion.div>
+          <motion.div custom={13} variants={iconAnimation}>
+            <a href="https://git-scm.com/" title="Git Site">
+              {" "}
+              <FaGitAlt className="cursor-pointer  " />
+            </a>
+          </motion.div>
+
+          <motion.div custom={12} variants={iconAnimation}>
             <a href="https://tailwindcss.com/" title="TailwindCSS Site">
               {" "}
               <BiLogoTailwindCss className="cursor-pointer " />
             </a>
           </motion.div>
-          <motion.div custom={12} variants={iconAnimation}>
-            <a href="https://git-scm.com/" title="Git Site">
+          <motion.div custom={11} variants={iconAnimation}>
+            <a href="https://lodash.com/" title="LoDash Site">
               {" "}
-              <FaGitAlt className="cursor-pointer  " />
+              <SiLodash className="cursor-pointer mt-[.2rem] text-3xl" />
             </a>
           </motion.div>
         </motion.div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import _ from "lodash";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { motion } from "framer-motion";
 
@@ -7,10 +8,6 @@ import contentItemsSlider, {
 } from "../../data/ProjectDataSlider";
 
 import { useSwipeable } from "react-swipeable";
-
-import Rusmetro from "../../../img/rusmetrologiya-logo.png";
-import Medprom from "../../../img/MedpromlabLogo_2.png";
-import Kultlogo from "../../../img/kult-logo.png";
 
 function PartnersSlider() {
   const [description, setDescription] = useState(contentItemsSlider);
@@ -63,7 +60,8 @@ function PartnersSlider() {
             </button>
             <section className="w-full h-full  mx-auto" {...scrollSlide}>
               <div className=" relative flex w-full h-full text-center overflow-hidden">
-                {description.map(
+                {_.map(
+                  description,
                   (skill: IContentSlider, skillIndex: number) => {
                     const { id, icon, type, desc, engage, link } = skill;
 
@@ -83,8 +81,8 @@ function PartnersSlider() {
                         className={`${position}  absolute flex flex-col items-center w-full h-full opacity-0 mt-[3rem] text-white`}
                         key={id}
                       >
-                        <div className="flex flex-col items-centerw-full">
-                          <div className="w-[15rem] h-[4rem]  rounded-full  text-[1rem] px-[1rem] text-black">
+                        <div className="flex flex-col items-center w-full justify-start">
+                          <div className="w-[15rem] h-[4rem]  text-left -ml-[2rem]">
                             {" "}
                             <img
                               src={icon}
@@ -97,7 +95,7 @@ function PartnersSlider() {
                           <h2 className=""> Тип сайта: {type}</h2>
                           <p className="mt-[1rem]">Вовлеченность: {engage}</p>
                           <p className="mt-[1rem]">Этапы разработки: </p>
-                          {[].concat(desc).map((text, idx) => (
+                          {_.map(_.concat(desc), (text, idx) => (
                             <li key={`${id}__${idx}`} className="">
                               {text}
                             </li>
