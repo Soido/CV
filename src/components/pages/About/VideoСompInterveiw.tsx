@@ -8,7 +8,6 @@ function VideoCompinterview() {
       <video
         className=" w-full  h-full  object-contain "
         autoPlay
-        loop
         playsInline
         disablePictureInPicture
       >

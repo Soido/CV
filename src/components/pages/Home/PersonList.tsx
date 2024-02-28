@@ -1,8 +1,13 @@
-import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { LiaTelegramPlane, LiaInstagram, LiaLinkedinIn } from "react-icons/lia";
+import {
+  LiaTelegramPlane,
+  LiaInstagram,
+  LiaLinkedinIn,
+  LiaFileDownloadSolid,
+  LiaEnvelopeSolid,
+} from "react-icons/lia";
 import { SlSocialVkontakte } from "react-icons/sl";
 
 import avatar from "../../../img/avatar.png";
@@ -46,11 +51,17 @@ const PersonList = () => {
                 </h2>
               </div>
               <div className="flex justify-end ">
+                <a href={require("../../../dataCv/CV.pdf")} download>
+                  <div className="flex flex-row items-center justify-center">
+                    <button className=" px-[1rem]">Скачать резюме </button>
+                    <LiaFileDownloadSolid className="text-2xl" />
+                  </div>
+                </a>
                 <button
                   className=" px-[1rem]"
                   onClick={() => navigate("/contacts")}
                 >
-                  Скачать резюме{" "}
+                  <LiaEnvelopeSolid className="text-2xl" />
                 </button>
               </div>
             </div>

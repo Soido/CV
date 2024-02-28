@@ -7,7 +7,6 @@ import { BiVolumeMute, BiXCircle } from "react-icons/bi";
 import VideoСompInterveiw from "./VideoСompInterveiw";
 
 import bgvideo from "../../../video/bgvideo.mp4";
-import testvideo from "../../../video/testvideo.mp4";
 
 function VideoComp() {
   const [isLoading, setIsloading] = useState(false);
@@ -58,7 +57,7 @@ function VideoComp() {
           <div className="relative flex justify-center h-full ">
             {!open ? (
               <div
-                className={`absolute md:bottom-0 bottom-[50%] lg:bottom-[2rem] xl:bottom-[8rem] 2xl:bottom-[2rem] text-4xl text-white cursor-pointer ${
+                className={`absolute md:bottom-0 bottom-[30%] lg:bottom-[2rem] xl:bottom-[8rem] 2xl:bottom-[2rem] text-4xl text-white cursor-pointer ${
                   open && isLoading ? "invisible" : "visible"
                 }`}
               >
@@ -71,7 +70,7 @@ function VideoComp() {
               </div>
             ) : (
               <div
-                className={`absolute md:bottom-0 bottom-[50%] lg:bottom-[2rem] xl:bottom-[8rem] 2xl:bottom-[2rem] text-4xl text-white cursor-pointer ${
+                className={`absolute md:bottom-0 bottom-[30%] lg:bottom-[2rem] xl:bottom-[8rem] 2xl:bottom-[2rem] text-4xl text-white cursor-pointer ${
                   isLoading || !open ? "invisible" : "visible"
                 }`}
               >
