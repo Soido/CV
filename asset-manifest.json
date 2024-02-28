@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/CV/static/css/main.7df7f7bc.css",
-    "main.js": "/CV/static/js/main.92addf5b.js",
+    "main.css": "/CV/static/css/main.4f518172.css",
+    "main.js": "/CV/static/js/main.01cb792c.js",
     "static/media/testvideo.mp4": "/CV/static/media/testvideo.7cccc3464eada34af841.mp4",
     "static/media/bgvideo.mp4": "/CV/static/media/bgvideo.31db1fb10a21f282adfb.mp4",
     "static/media/avatar.png": "/CV/static/media/avatar.8eb262908af9cb9d236c.png",
     "static/media/MedpromlabLogo_2.png": "/CV/static/media/MedpromlabLogo_2.84ece97862c703e7c5f7.png",
     "static/media/knx24.png": "/CV/static/media/knx24.9bb4f627bbd5cd79ce57.png",
     "index.html": "/CV/index.html",
-    "main.7df7f7bc.css.map": "/CV/static/css/main.7df7f7bc.css.map",
-    "main.92addf5b.js.map": "/CV/static/js/main.92addf5b.js.map"
+    "main.4f518172.css.map": "/CV/static/css/main.4f518172.css.map",
+    "main.01cb792c.js.map": "/CV/static/js/main.01cb792c.js.map"
   },
   "entrypoints": [
-    "static/css/main.7df7f7bc.css",
-    "static/js/main.92addf5b.js"
+    "static/css/main.4f518172.css",
+    "static/js/main.01cb792c.js"
   ]
 }
