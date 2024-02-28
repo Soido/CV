@@ -21,7 +21,7 @@ const MyModal = ({
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="md:p-[2rem] p-[1rem] rounded-lg border-2 bg-black/80 md:min-w-[20rem]"
+        className="md:p-[2rem] p-[1rem]  bg-black/50 md:min-w-[20rem]"
         onClick={(e) => e.stopPropagation()}
       >
         {children}

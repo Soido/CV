@@ -36,8 +36,8 @@ function SkillSlider() {
 
   return (
     <>
-      <div className=" flex w-full  xl:mt-[1rem] mt-[1rem] lg:pt-[4rem] xl:pt-0 text-white lg:px-[2rem] px-[1.5rem] ">
-        <h2 className="font-thin tracking-widest text-[1.2rem] xl:text-[1.5rem] leading-relaxed xl:ml-[2rem] lg:mb-[2rem] ">
+      <div className=" flex w-full  xl:mt-[1rem] mt-[1rem] lg:pt-[6rem] xl:pt-0 text-white lg:px-[2rem] px-[1.5rem] ">
+        <h2 className="font-thin tracking-widest text-[1.2rem] lg:text-[1.5rem] leading-relaxed lg:ml-[2rem] lg:mb-[2rem] ">
           {" "}
           Мои инструменты
         </h2>
@@ -49,7 +49,7 @@ function SkillSlider() {
           />{" "}
         </button>
         <section {...scrollSlide} className="w-full  mx-auto">
-          <div className=" relative flex  2xl:mt-[2rem] lg:mt-0 mt-[2rem] lg:h-[16rem] xl:h-[22rem] 2xl:h-[26rem] h-[28rem] w-full text-center overflow-hidden">
+          <div className=" relative flex  2xl:mt-[2rem] lg:mt-0 mt-[2rem] lg:h-[24rem] xl:h-[22rem] 2xl:h-[26rem] h-[28rem] w-full text-center overflow-hidden">
             {_.map(description, (skill: ISkills, skillIndex: number) => {
               const { id, icon: Icon, name, desc } = skill;
 

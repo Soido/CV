@@ -6,10 +6,9 @@ function VideoCompinterview() {
   return (
     <>
       <video
-        className=" w-full  h-full md:object-cover object-contain object-left"
+        className=" w-full  h-full  object-contain "
         autoPlay
         loop
-        muted
         playsInline
         disablePictureInPicture
       >

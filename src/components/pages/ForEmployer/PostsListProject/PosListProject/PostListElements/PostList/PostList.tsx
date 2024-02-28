@@ -3,7 +3,13 @@ import _ from "lodash";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import PostItem from "./PostItem";
 
-const PostList = ({ posts, remove }: { posts: []; remove: () => void }) => {
+const PostList = ({
+  posts,
+  remove,
+}: {
+  posts: any[];
+  remove: (args: any) => void;
+}) => {
   if (!posts.length) {
     return <h2>Посты не найдены</h2>;
   }

@@ -1,10 +1,8 @@
-import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useWindowSize } from "react-use";
 import { motion } from "framer-motion";
 
 import "./Home.css";
-
-import useHover from "../../../hooks/useHover";
 
 import { FaReact, FaGitAlt, FaNodeJs } from "react-icons/fa6";
 import { SiLodash } from "react-icons/si";
@@ -16,9 +14,8 @@ import {
 } from "react-icons/bi";
 
 const HomeSkillsList = () => {
-  const ref = useRef(null);
-  const isHovering = useHover(ref);
-
+  const { width } = useWindowSize();
+  console.log(width);
   const iconAnimation = {
     hidden: {
       x: -100,
@@ -58,7 +55,7 @@ const HomeSkillsList = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div custom={7} variants={iconAnimation} ref={ref}>
+          <motion.div custom={7} variants={iconAnimation}>
             <a href="https://nodejs.org/en" title="NodeJs Site">
               <FaNodeJs className={`cursor-pointer `} />
             </a>
@@ -73,7 +70,7 @@ const HomeSkillsList = () => {
             </a>
           </motion.div>
 
-          <motion.div custom={10} variants={iconAnimation}>
+          <motion.div custom={9} variants={iconAnimation}>
             <a
               href="https://www.typescriptlang.org/"
               title="TypeScript.org Site"
@@ -82,7 +79,7 @@ const HomeSkillsList = () => {
               <BiLogoTypescript className="cursor-pointer " />
             </a>
           </motion.div>
-          <motion.div custom={9} variants={iconAnimation}>
+          <motion.div custom={10} variants={iconAnimation}>
             <a href="https://react.dev/" title="React Site">
               {" "}
               <FaReact className="cursor-pointer App-logo " />
@@ -94,25 +91,29 @@ const HomeSkillsList = () => {
               <BiLogoRedux className="cursor-pointer  " />
             </a>
           </motion.div>
-          <motion.div custom={13} variants={iconAnimation}>
+          <motion.div custom={12} variants={iconAnimation}>
             <a href="https://git-scm.com/" title="Git Site">
               {" "}
               <FaGitAlt className="cursor-pointer  " />
             </a>
           </motion.div>
+          {width > 728 ? (
+            <motion.div custom={13} variants={iconAnimation}>
+              <a href="https://tailwindcss.com/" title="TailwindCSS Site">
+                {" "}
+                <BiLogoTailwindCss className="cursor-pointer " />
+              </a>
+            </motion.div>
+          ) : null}
 
-          <motion.div custom={12} variants={iconAnimation}>
-            <a href="https://tailwindcss.com/" title="TailwindCSS Site">
-              {" "}
-              <BiLogoTailwindCss className="cursor-pointer " />
-            </a>
-          </motion.div>
-          <motion.div custom={11} variants={iconAnimation}>
-            <a href="https://lodash.com/" title="LoDash Site">
-              {" "}
-              <SiLodash className="cursor-pointer mt-[.2rem] text-3xl" />
-            </a>
-          </motion.div>
+          {width > 728 ? (
+            <motion.div custom={14} variants={iconAnimation}>
+              <a href="https://lodash.com/" title="LoDash Site">
+                {" "}
+                <SiLodash className="cursor-pointer mt-[.2rem] text-3xl" />
+              </a>
+            </motion.div>
+          ) : null}
         </motion.div>
         <motion.div
           className="flex justify-end mt-[1.2rem] -mr-[2rem]"

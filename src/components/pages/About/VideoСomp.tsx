@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { BallTriangle } from "react-loader-spinner";
 
-import { BiVolumeMute } from "react-icons/bi";
+import { BiVolumeMute, BiXCircle } from "react-icons/bi";
 
 import VideoСompInterveiw from "./VideoСompInterveiw";
 
@@ -24,9 +24,9 @@ function VideoComp() {
   return (
     <>
       <div className="xl:max-w-[860px] lg:max-w-[780px] lg:mx-auto xl:mx-0 flex flex-col w-full xl:h-[34rem] lg:h-[20rem] h-screen xl:p-[2rem] p-0 items-center justify-center lg:-mt-[2rem] ">
-        <div className="relative xl:h-full w-full h-[20rem] lg:h-[18rem]">
+        <div className="relative flex items-center justify-center xl:h-full w-full h-full ">
           {open ? (
-            <div className="absolute flex w-full h-[20rem] md:h-[25rem] lg:h-[18rem]  xl:h-[30rem]  ">
+            <div className="absolute flex w-full h-full  2xl:w-[20rem] lg:h-[30rem] xl:h-[40rem]">
               {isLoading ? (
                 <div className=" flex justify-center items-center w-full -mt-[5rem] ">
                   <BallTriangle
@@ -41,10 +41,10 @@ function VideoComp() {
               )}
             </div>
           ) : (
-            <div className=" absolute flex h-[20rem] md:h-[25rem] lg:h-[18rem] xl:h-[30rem]  w-full">
+            <div className=" absolute flex justify-center xl:h-[40rem] md:h-[25rem] lg:h-[30rem]  2xl:w-[20rem]">
               {" "}
               <video
-                className=" w-full h-full md:object-cover object-contain object-left"
+                className=" w-full h-full object-contain object-left"
                 autoPlay
                 loop
                 muted
@@ -56,18 +56,33 @@ function VideoComp() {
             </div>
           )}
           <div className="relative flex justify-center h-full ">
-            <div
-              className={`absolute md:bottom-0 bottom-[5rem] lg:bottom-[2rem] xl:bottom-[8rem] 2xl:bottom-[2rem] text-4xl text-white cursor-pointer ${
-                open ? "invisible" : "visible"
-              }`}
-            >
-              <BiVolumeMute
-                onClick={() => {
-                  setOpen(!open);
-                  fetchData();
-                }}
-              />{" "}
-            </div>
+            {!open ? (
+              <div
+                className={`absolute md:bottom-0 bottom-[50%] lg:bottom-[2rem] xl:bottom-[8rem] 2xl:bottom-[2rem] text-4xl text-white cursor-pointer ${
+                  open && isLoading ? "invisible" : "visible"
+                }`}
+              >
+                <BiVolumeMute
+                  onClick={() => {
+                    setOpen(!open);
+                    fetchData();
+                  }}
+                />{" "}
+              </div>
+            ) : (
+              <div
+                className={`absolute md:bottom-0 bottom-[50%] lg:bottom-[2rem] xl:bottom-[8rem] 2xl:bottom-[2rem] text-4xl text-white cursor-pointer ${
+                  isLoading || !open ? "invisible" : "visible"
+                }`}
+              >
+                <BiXCircle
+                  onClick={() => {
+                    setOpen(!open);
+                    fetchData();
+                  }}
+                />{" "}
+              </div>
+            )}
           </div>
         </div>
       </div>

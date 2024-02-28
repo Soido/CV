@@ -1,5 +1,6 @@
 import _ from "lodash";
 import { useMemo } from "react";
+import { IPost } from "../components/data/Interface";
 
 export const useSortedPosts = (posts: any, sort: any) => {
   const sortedPosts: any = useMemo(() => {
@@ -13,11 +14,11 @@ export const useSortedPosts = (posts: any, sort: any) => {
   return sortedPosts;
 };
 
-export const usePosts = (posts: any, sort: any, query: any) => {
+export const usePosts = (posts: IPost[], sort: string, query: string) => {
   const sortedPosts = useSortedPosts(posts, sort);
 
   const sortedAndSearchPosts = useMemo(() => {
-    return _.filter(sortedPosts, (post: any) =>
+    return _.filter(sortedPosts, (post) =>
       post.title.toLowerCase().includes(query, sortedPosts)
     );
   }, [query, sortedPosts]);

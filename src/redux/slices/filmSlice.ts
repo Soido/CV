@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import createFilmWithID from "../../utils/createFilmWithID";
 import { setError } from "./errorSlice";
+import { IFilms } from "../../components/data/Interface";
 
 const initialState = {
   films: [],
@@ -57,11 +58,11 @@ const filmSlice = createSlice({
     deleteFilm: (state, action) => {
       return {
         ...state,
-        films: state.films.filter((film: any) => film.id !== action.payload),
+        films: state.films.filter((film: IFilms) => film.id !== action.payload),
       };
     },
-    toggleFavorite: (state: any, action) => {
-      state.films.forEach((film: any) => {
+    toggleFavorite: (state, action) => {
+      state.films.forEach((film: IFilms) => {
         if (film.id === action.payload) {
           film.isFavorite = !film.isFavorite;
         }
@@ -87,7 +88,7 @@ const filmSlice = createSlice({
 
 export const { addFilm, deleteFilm, toggleFavorite } = filmSlice.actions;
 
-export const selectFilms = (state: { films: { films: any } }) =>
+export const selectFilms = (state: { films: { films: IFilms[] } }) =>
   state.films.films;
 
 export const selecIsLoadingViaAPI = (state: {

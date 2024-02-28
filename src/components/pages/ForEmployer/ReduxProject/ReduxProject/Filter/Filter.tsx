@@ -67,7 +67,7 @@ const Filter = () => {
             />
           </div>
         </div>
-        <div className="w-full flex lg:flex-row flex-col justify-start lg:justify-between items-stretch mt-[1rem] gap-4">
+        <div className="w-full flex flex-row justify-start lg:justify-between items-stretch mt-[1rem] gap-4">
           <div className="w-full lg:flex-1 m-auto mb-[1rem] lg:m-0 lg:mb-0 ">
             <label className=" text-left flex flex-row w-full ">
               {" "}

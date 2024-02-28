@@ -14,5 +14,5 @@ export const useFetching = (callback: () => void) => {
     }
   };
 
-  return [fetching, isPostLoading, error];
+  return [fetching, isPostLoading, error] as const;
 };

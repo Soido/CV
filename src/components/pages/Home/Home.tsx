@@ -1,30 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-
 import PersonList from "./PersonList";
 import HomeAboutList from "./HomeAboutList";
 import HomeSkillsList from "./HomeSkillsList";
 
-import { useSwipeable } from "react-swipeable";
-
 const Home = () => {
-  // const ScrollToBottom = useSwipeable({
-  //   onSwipedUp: () =>
-  //    window.scrollTo({
-  //      top: document.documentElement.scrollHeight,
-  //      behavior: "smooth",
-  //   }),
-  //  trackMouse: true,
-  // delta: 1,
-  // });
-
-  // const scrollToTop = useSwipeable({
-  //   onSwipedDown: () =>
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth",
-  //     }),
-  // });
-
   return (
     <>
       <main className="w-screen lg:h-screen h-full">

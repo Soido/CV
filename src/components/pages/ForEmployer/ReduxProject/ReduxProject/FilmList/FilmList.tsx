@@ -85,9 +85,9 @@ const FilmList = () => {
   };
 
   return (
-    <div className="app-block w-full book-list mt-[1rem] mb-[2rem]">
+    <div className="app-block w-full h-full book-list mt-[1rem] mb-[2rem] ">
       {" "}
-      <h2 className="w-full lg:text-center text-left font-thin tracking-widest text-[1.2rem]  leading-relaxed mb-[2rem] ">
+      <h2 className="w-full  lg:text-center text-left font-thin tracking-widest text-[1.2rem]  leading-relaxed mb-[2rem] ">
         Список Фильмов
       </h2>
       {films.length === 0 ? (
@@ -96,7 +96,7 @@ const FilmList = () => {
           Вы не добавили ни один фильм{" "}
         </p>
       ) : (
-        <ul className="overflow-y-scroll p-0 list-none mt-[1rem] lg:h-[26rem] ">
+        <ul className="overflow-y-auto p-0 list-none mt-[1rem] h-[25rem] lg:h-[26rem] ">
           {" "}
           <Scrollbars
             style={{
@@ -120,7 +120,7 @@ const FilmList = () => {
                 i: number
               ) => (
                 <li
-                  className="flex justify-between items-center w-auto py-[1rem] lg:px-[2rem] border-b-2 list-none "
+                  className="flex justify-between items-center w-auto py-[1rem] lg:px-[2rem] border-b-2 list-none mr-[1rem]"
                   key={film.id}
                 >
                   <div className="flex-1 text-left ">
